@@ -1,0 +1,46 @@
+{
+  "teams": [
+    {
+      "slug": "bills",
+      "city": "Buffalo",
+      "name": "Bills",
+      "fullName": "Buffalo Bills",
+      "abbreviation": "BUF",
+      "aliases": ["buffalo", "buffalo bills", "bills", "buf"],
+      "colors": {
+        "primary": "#00338d",
+        "primaryDeep": "#001d54",
+        "accent": "#c60c30"
+      },
+      "stadium": "Highmark Stadium, Orchard Park, NY"
+    },
+    {
+      "slug": "giants",
+      "city": "New York",
+      "name": "Giants",
+      "fullName": "New York Giants",
+      "abbreviation": "NYG",
+      "aliases": ["giants", "new york giants", "ny giants", "nyg"],
+      "colors": {
+        "primary": "#0b2265",
+        "primaryDeep": "#04123a",
+        "accent": "#a71930"
+      },
+      "stadium": "MetLife Stadium, East Rutherford, NJ"
+    },
+    {
+      "slug": "jets",
+      "city": "New York",
+      "name": "Jets",
+      "fullName": "New York Jets",
+      "abbreviation": "NYJ",
+      "aliases": ["jets", "new york jets", "ny jets", "nyj", "gang green"],
+      "colors": {
+        "primary": "#125740",
+        "primaryDeep": "#0a2e21",
+        "accent": "#000000"
+      },
+      "stadium": "MetLife Stadium, East Rutherford, NJ"
+    }
+  ]
+}
