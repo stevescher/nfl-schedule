@@ -1,0 +1,180 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Buffalo Bills 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:bills-2026-preseason-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20260815T230000Z
+DTEND:20260816T023000Z
+SUMMARY:Bills vs. Carolina Panthers (Preseason)
+DESCRIPTION:Watch: TBD\nBroadcast network not confirmed in sources checked.
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-preseason-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20260822T230000Z
+DTEND:20260823T023000Z
+SUMMARY:Bills vs. Cleveland Browns (Preseason)
+DESCRIPTION:Watch: TBD\nBroadcast network not confirmed in sources checked.
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-preseason-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20260827T230000Z
+DTEND:20260828T023000Z
+SUMMARY:Bills vs. Pittsburgh Steelers (Preseason)
+DESCRIPTION:Watch: TBD\nBroadcast network not confirmed in sources checked.
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20260913T170000Z
+DTEND:20260913T203000Z
+SUMMARY:Bills @ Houston Texans
+DESCRIPTION:Watch: CBS
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20260918T001500Z
+DTEND:20260918T034500Z
+SUMMARY:Bills vs. Detroit Lions
+DESCRIPTION:Watch: Prime Video\nThursday Night Football\, Highmark Stadium 
+ inaugural game\nStreaming exclusive on Prime Video\, no over-the-air simul
+ cast confirmed.
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20260927T170000Z
+DTEND:20260927T203000Z
+SUMMARY:Bills vs. Los Angeles Chargers
+DESCRIPTION:Watch: FOX
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261004T170000Z
+DTEND:20261004T203000Z
+SUMMARY:Bills vs. New England Patriots
+DESCRIPTION:Watch: CBS
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261013T001500Z
+DTEND:20261013T034500Z
+SUMMARY:Bills @ Los Angeles Rams
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week06@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261018T202500Z
+DTEND:20261018T235500Z
+SUMMARY:Bills @ Las Vegas Raiders
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nLate-window CBS slot as currently scheduled\; could still shift.
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261101T170000Z
+DTEND:20261101T203000Z
+SUMMARY:Bills vs. Baltimore Ravens
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for Sunday Night Football flex scheduling.
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261110T011500Z
+DTEND:20261110T044500Z
+SUMMARY:Bills @ Minnesota Vikings
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261115T180000Z
+DTEND:20261115T213000Z
+SUMMARY:Bills @ New York Jets
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week11@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261122T180000Z
+DTEND:20261122T213000Z
+SUMMARY:Bills vs. Miami Dolphins
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261127T012000Z
+DTEND:20261127T045000Z
+SUMMARY:Bills vs. Kansas City Chiefs
+DESCRIPTION:Watch: NBC\nThanksgiving Day primetime
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261206T212500Z
+DTEND:20261207T005500Z
+SUMMARY:Bills @ New England Patriots
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261214T012000Z
+DTEND:20261214T045000Z
+SUMMARY:Bills @ Green Bay Packers
+DESCRIPTION:Watch: NBC\nSunday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261220T012000Z
+DTEND:20261220T045000Z
+SUMMARY:Bills vs. Chicago Bears
+DESCRIPTION:Watch: CBS\nSaturday primetime
+LOCATION:Highmark Stadium\, Orchard Park\, NY
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week16@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20261225T213000Z
+DTEND:20261226T010000Z
+SUMMARY:Bills @ Denver Broncos
+DESCRIPTION:Watch: Netflix\nChristmas Day\nStreaming exclusive on Netflix.
+END:VEVENT
+BEGIN:VEVENT
+UID:bills-2026-regular-week17@nfl-schedule.stevescher.com
+DTSTAMP:20260904T185654Z
+DTSTART:20270103T180000Z
+DTEND:20270103T213000Z
+SUMMARY:Bills @ Miami Dolphins
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFinal week eligible for flex scheduling.
+END:VEVENT
+END:VCALENDAR
