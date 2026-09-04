@@ -22,6 +22,99 @@ body {
 }
 a { color: inherit; }
 
+/* ---------- Top nav (team pages) ---------- */
+.topnav {
+  background: #0c0e13;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.topnav-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.back-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.12s ease;
+}
+.back-pill:hover { background: rgba(255,255,255,0.16); }
+
+.topnav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 8px 14px;
+  flex: 1;
+  max-width: 280px;
+}
+.topnav-search svg { color: rgba(255,255,255,0.5); flex-shrink: 0; }
+.topnav-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13.5px;
+}
+.topnav-search input::placeholder { color: rgba(255,255,255,0.45); }
+
+.topnav-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 260px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 16px 36px -16px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 20;
+}
+.topnav-results[hidden] { display: none; }
+.topnav-results .search-result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+}
+.topnav-results .search-result:last-child { border-bottom: none; }
+.topnav-results .search-result:hover { background: var(--bg); }
+.topnav-results .search-result .swatch {
+  width: 8px;
+  height: 22px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.topnav-results .search-result .full-name { font-weight: 800; }
+.topnav-results .search-empty { padding: 12px 14px; font-size: 12.5px; color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  .topnav-inner { flex-wrap: wrap; }
+  .topnav-search { max-width: none; width: 100%; order: 3; }
+}
+
 /* ---------- Masthead ---------- */
 .masthead {
   background: var(--team-primary);

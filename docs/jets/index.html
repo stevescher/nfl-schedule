@@ -12,9 +12,23 @@
 </head>
 <body>
 
+  <div class="topnav">
+    <div class="topnav-inner">
+      <a class="back-pill" href="/">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        All Teams
+      </a>
+      <div class="topnav-search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="team-search" placeholder="Switch team..." autocomplete="off" />
+        <div class="topnav-results" id="search-results" hidden></div>
+      </div>
+    </div>
+  </div>
+
   <div class="masthead">
     <div class="masthead-inner">
-      <div class="eyebrow"><span class="dot"></span> <span id="team-city">2026 SEASON</span> &middot; <a href="/">All Teams</a></div>
+      <div class="eyebrow"><span class="dot"></span> <span id="team-city">2026 SEASON</span></div>
       <h1><span id="team-name">Team</span><br><span class="accent">Full Schedule</span></h1>
       <p class="sub">Every kickoff, every channel, straight from the official league release. Checked weekly so nothing catches you off guard.</p>
       <div class="record-strip">

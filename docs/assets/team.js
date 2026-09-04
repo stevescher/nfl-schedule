@@ -98,14 +98,84 @@ function buildSection(seasonType, games) {
   return section;
 }
 
+function matchTeams(teams, query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+
+  function score(team) {
+    if (team.aliases.some((a) => a === q)) return 100;
+    if (team.aliases.some((a) => a.startsWith(q))) return 80;
+    if (team.aliases.some((a) => a.includes(q))) return 50;
+    return 0;
+  }
+
+  return teams
+    .map((t) => ({ t, score: score(t) }))
+    .filter((r) => r.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map((r) => r.t);
+}
+
+function initSwitchSearch(teams, currentSlug) {
+  const input = document.getElementById('team-search');
+  const resultsEl = document.getElementById('search-results');
+  if (!input || !resultsEl) return;
+
+  const otherTeams = teams.filter((t) => t.slug !== currentSlug);
+
+  function render(query) {
+    if (!query.trim()) {
+      resultsEl.hidden = true;
+      resultsEl.innerHTML = '';
+      return;
+    }
+    const matches = matchTeams(otherTeams, query).slice(0, 6);
+    if (!matches.length) {
+      resultsEl.innerHTML = '<div class="search-empty">No teams found.</div>';
+      resultsEl.hidden = false;
+      return;
+    }
+    resultsEl.innerHTML = matches
+      .map(
+        (t) =>
+          '<a class="search-result" href="/' + t.slug + '/">' +
+            '<span class="swatch" style="background:' + t.colors.primary + '"></span>' +
+            '<span class="full-name">' + t.fullName + '</span>' +
+          '</a>'
+      )
+      .join('');
+    resultsEl.hidden = false;
+  }
+
+  input.addEventListener('input', (e) => render(e.target.value));
+  input.addEventListener('focus', (e) => {
+    if (e.target.value.trim()) render(e.target.value);
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.topnav-search')) resultsEl.hidden = true;
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = resultsEl.querySelector('.search-result');
+      if (first) window.location.href = first.getAttribute('href');
+    }
+    if (e.key === 'Escape') {
+      resultsEl.hidden = true;
+      input.blur();
+    }
+  });
+}
+
 async function initTeamPage(slug) {
   const status = document.getElementById('status');
   const sections = document.getElementById('sections');
 
   let teamMeta;
+  let allTeams = [];
   try {
     const idxRes = await fetch('/data/teams.json', { cache: 'no-store' });
     const idx = await idxRes.json();
+    allTeams = idx.teams;
     teamMeta = idx.teams.find((t) => t.slug === slug);
   } catch (e) {
     status.textContent = 'Could not load team index. Try refreshing.';
@@ -116,6 +186,8 @@ async function initTeamPage(slug) {
     status.textContent = 'Unknown team.';
     return;
   }
+
+  initSwitchSearch(allTeams, slug);
 
   document.documentElement.style.setProperty('--team-primary', teamMeta.colors.primary);
   document.documentElement.style.setProperty('--team-primary-deep', teamMeta.colors.primaryDeep);
