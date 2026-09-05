@@ -41,11 +41,95 @@ function dayFmt(dateStr) {
   };
 }
 
-function timeFmt(timeStr) {
-  if (!timeStr) return '';
+// nth Sunday of a given month/year, at UTC midnight (used to find the DST
+// transition dates). n=1 -> first Sunday, n=2 -> second Sunday, etc.
+function nthSunday(year, month, n) {
+  const d = new Date(Date.UTC(year, month - 1, 1, 7));
+  let sundays = 0;
+  while (true) {
+    if (d.getUTCDay() === 0) {
+      sundays++;
+      if (sundays === n) return d;
+    }
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+}
+
+// Converts a stored ET wall-clock kickoff (date + "HH:MM") to a real UTC
+// Date, accounting for whether that date falls in EDT or EST. Mirrors the
+// same logic generate-ics.mjs uses to build the .ics feed, so the page and
+// the calendar file always agree on the actual instant a game starts.
+function etToUtcDate(dateStr, timeStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
   const [hh, mm] = timeStr.split(':').map(Number);
-  const dt = new Date(Date.UTC(2000, 0, 1, hh, mm));
-  return dt.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'UTC' }) + ' ET';
+
+  const marchSecondSunday = nthSunday(y, 3, 2);
+  const novFirstSunday = nthSunday(y, 11, 1);
+  const dateAtNoon = new Date(Date.UTC(y, m - 1, d, 12));
+  const isDst = dateAtNoon >= marchSecondSunday && dateAtNoon < novFirstSunday;
+  const offsetHours = isDst ? -4 : -5;
+
+  return new Date(Date.UTC(y, m - 1, d, hh - offsetHours, mm));
+}
+
+// The visitor's IANA timezone, detected client-side with no permission
+// prompt. Falls back to labeling everything ET if detection ever throws.
+const VIEWER_TIMEZONE = (() => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
+  } catch (e) {
+    return 'America/New_York';
+  }
+})();
+
+const VIEWER_IS_EASTERN = VIEWER_TIMEZONE === 'America/New_York';
+
+function tzAbbrev(date, timeZone) {
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'short' }).formatToParts(date);
+    const tz = parts.find((p) => p.type === 'timeZoneName');
+    return tz ? tz.value : '';
+  } catch (e) {
+    return '';
+  }
+}
+
+// Formats a stored ET kickoff time in the viewer's local timezone, with the
+// ET time kept alongside for anyone comparing notes with someone else (a
+// group chat, a family in a different timezone, etc).
+function timeFmt(dateStr, timeStr) {
+  if (!timeStr) return '';
+  const utcDate = etToUtcDate(dateStr, timeStr);
+
+  const etLabel =
+    utcDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }) +
+    ' ' +
+    tzAbbrev(utcDate, 'America/New_York');
+
+  if (VIEWER_IS_EASTERN) return etLabel;
+
+  const localLabel =
+    utcDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: VIEWER_TIMEZONE }) +
+    ' ' +
+    tzAbbrev(utcDate, VIEWER_TIMEZONE);
+
+  return localLabel + ' (' + etLabel + ')';
+}
+
+// Flags the single soonest upcoming game (confirmed date/time, no result
+// yet, kickoff still in the future) across the whole season so the UI can
+// highlight "what's next" at a glance, which is the actual question this
+// app exists to answer.
+function markNextGame(games) {
+  let next = null;
+  const now = new Date();
+  for (const g of games) {
+    if (g.result || !g.date || !g.kickoffLocal) continue;
+    const kickoff = etToUtcDate(g.date, g.kickoffLocal);
+    if (kickoff < now) continue;
+    if (!next || kickoff < etToUtcDate(next.date, next.kickoffLocal)) next = g;
+  }
+  if (next) next.isNext = true;
 }
 
 function buildRow(g) {
@@ -63,10 +147,11 @@ function buildRow(g) {
 
   const isHome = g.homeAway === 'home';
   const isPast = !!g.result;
-  tr.className = 'game-row ' + (isHome ? 'home-row' : 'away-row') + (isPast ? ' past-row' : '');
+  tr.className =
+    'game-row ' + (isHome ? 'home-row' : 'away-row') + (isPast ? ' past-row' : '') + (g.isNext ? ' next-row' : '');
 
   const d = dayFmt(g.date);
-  const time = g.kickoffLocal ? timeFmt(g.kickoffLocal) : '';
+  const time = g.kickoffLocal ? timeFmt(g.date, g.kickoffLocal) : '';
   const verb = isHome ? 'vs' : '@';
 
   const watchParts = [];
@@ -95,6 +180,7 @@ function buildRow(g) {
       '<div class="opp-line">' +
         verb + ' ' + g.opponent +
         '<span class="ha-flag ' + (isHome ? 'home' : 'away') + '">' + (isHome ? 'Home' : 'Away') + '</span>' +
+        (g.isNext ? '<span class="next-flag">Next</span>' : '') +
       '</div>' +
       (g.isPrimetimeOrSpecial ? '<div class="special-line">' + g.isPrimetimeOrSpecial + '</div>' : '') +
       (isPast
@@ -331,6 +417,8 @@ async function initTeamPage(slug) {
     const type = g.seasonType || 'regular';
     if (byType[type]) byType[type].push(g);
   }
+
+  markNextGame(data.games);
 
   const frag = document.createDocumentFragment();
 
