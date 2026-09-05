@@ -38,7 +38,7 @@ existing one) gets added.
 1. Add or edit its entry in `data/teams.json` (slug, city, name,
    abbreviation, aliases, colors, stadium).
 2. Add or edit `data/teams/<slug>.json` with that team's schedule.
-3. Run `node generate-ics.mjs` — this regenerates that team's `.ics`,
+3. Run `node generate-ics.mjs`: this regenerates that team's `.ics`,
    published data copy, and (for a new team) its `docs/<slug>/index.html`
    page shell automatically from the canonical template
    (`docs/bills/index.html`). No manual page-shell copying needed.
@@ -49,15 +49,35 @@ existing one) gets added.
 Several teams' secondary/accent color (light gold, silver) fails contrast
 as a solid button background with white text. `docs/assets/team.js`
 computes each team's accent contrast at runtime (WCAG relative luminance)
-and switches to dark button text automatically when needed — no per-team
-override required in the data.
+and switches to dark button text automatically when needed, so no
+per-team override is required in the data.
+
+## Standings
+
+`fetch-standings.mjs` pulls current record + division rank for all 32
+teams from ESPN's public standings API in one request
+(`site.api.espn.com/apis/v2/sports/football/nfl/standings?seasontype=2&level=3`)
+and writes `data/standings.json`. No tiebreaker logic of our own; it's a
+straight read of ESPN's already-computed standings, matched to our team
+slugs by abbreviation (with a small alias map for the couple of cases
+where ESPN's abbreviation differs from ours, e.g. Washington).
+
+`generate-ics.mjs` publishes `data/standings.json` to `docs/data/` if it
+exists; each team page fetches it and shows a record badge (e.g. "7-3,
+2nd in AFC East") next to the team name. The file is optional: if it's
+missing (never fetched, or the fetch failed), the badge simply doesn't
+render, no broken page.
+
+Run `node fetch-standings.mjs` periodically (weekly during the season is
+plenty, since it's the same cadence the schedule-check routine would use)
+and then `node generate-ics.mjs` to publish the update.
 
 ## Weekly update routine
 
 Not yet wired up for the full 32-team site (it existed for the single-team
 bills-schedule prototype). Worth deciding, once this site has run a few
 weeks, whether one routine covers all 32 teams per run or several routines
-split by division — a single 32-team run is cheaper to operate but needs a
+split by division. A single 32-team run is cheaper to operate but needs a
 larger prompt and more care to stay accurate; the research agents used to
 build this data set show a 4-team-per-agent batch works well without
 resorting to further sub-delegation.

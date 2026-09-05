@@ -162,6 +162,21 @@ a { color: inherit; }
   text-transform: uppercase;
 }
 .masthead h1 .accent { color: var(--team-accent); }
+.record-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin: 4px 0 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #c9d3ec;
+}
+.record-badge[hidden] { display: none; }
+.record-badge b { color: #fff; font-size: 16px; font-weight: 800; }
 .masthead p.sub {
   max-width: 46ch;
   color: #c9d3ec;
