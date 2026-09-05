@@ -11,6 +11,7 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TEAMS_DIR = join(__dirname, "data", "teams");
 const TEAMS_INDEX_PATH = join(__dirname, "data", "teams.json");
+const STANDINGS_PATH = join(__dirname, "data", "standings.json");
 const OUT_DIR = join(__dirname, "docs");
 const PAGE_TEMPLATE_PATH = join(OUT_DIR, "bills", "index.html");
 const GAME_DURATION_HOURS = 3.5;
@@ -177,6 +178,12 @@ function main() {
 
   // Publish the shared team index (colors, names, aliases for search).
   copyFileSync(TEAMS_INDEX_PATH, join(OUT_DIR, "data", "teams.json"));
+
+  // Publish standings (record + division rank), if a fetch has been run.
+  // Optional: the site works fine without it (pages just skip the record line).
+  if (existsSync(STANDINGS_PATH)) {
+    copyFileSync(STANDINGS_PATH, join(OUT_DIR, "data", "standings.json"));
+  }
 
   const pageTemplate = existsSync(PAGE_TEMPLATE_PATH) ? readFileSync(PAGE_TEMPLATE_PATH, "utf8") : null;
   if (!pageTemplate) {

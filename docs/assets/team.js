@@ -25,6 +25,12 @@ function readableTextColor(backgroundHex) {
   return contrastRatio(backgroundHex, '#ffffff') >= 3.0 ? '#ffffff' : '#16181d';
 }
 
+function ordinal(n) {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
 function dayFmt(dateStr) {
   if (!dateStr) return { weekday: 'TBD', rest: '' };
   const [y, m, d] = dateStr.split('-').map(Number);
@@ -97,7 +103,7 @@ function buildRow(g) {
     '</td>' +
     '<td class="col-watch">' +
       watchLabel +
-      (isLocalBroadcast ? '<span class="local-flag" title="Regional broadcast — not shown nationwide">local</span>' : '') +
+      (isLocalBroadcast ? '<span class="local-flag" title="Regional broadcast, not shown nationwide">local</span>' : '') +
       (g.streaming ? '<span class="streaming-pill">' + g.streaming + '</span>' : '') +
       (g.flexEligible ? '<span class="flex-flag">flex-eligible</span>' : '') +
     '</td>';
@@ -231,6 +237,28 @@ async function initTeamPage(slug) {
   if (cityEl) cityEl.textContent = teamMeta.city.toUpperCase();
   if (nameEl) nameEl.textContent = teamMeta.name;
   if (stadiumEl) stadiumEl.textContent = teamMeta.stadium;
+
+  const recordBadge = document.getElementById('record-badge');
+  if (recordBadge) {
+    try {
+      const standingsRes = await fetch('/data/standings.json', { cache: 'no-store' });
+      if (standingsRes.ok) {
+        const standingsData = await standingsRes.json();
+        const record = standingsData.teams?.[slug];
+        if (record) {
+          const recordStr = record.ties
+            ? record.wins + '-' + record.losses + '-' + record.ties
+            : record.wins + '-' + record.losses;
+          const rankStr = ordinal(record.divisionRank) + ' in ' + record.division;
+          recordBadge.innerHTML = '<b>' + recordStr + '</b><span>' + rankStr + '</span>';
+          recordBadge.hidden = false;
+        }
+      }
+    } catch (e) {
+      // Standings are optional polish; a missing/unreachable file just
+      // means the badge stays hidden, not a broken page.
+    }
+  }
 
   const icsUrl = window.location.origin + '/' + slug + '.ics';
   const icsUrlEl = document.getElementById('ics-url');
