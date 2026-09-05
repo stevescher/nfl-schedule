@@ -67,6 +67,12 @@ function buildRow(g) {
   if (g.network) watchParts.push(g.network);
   const watchLabel = watchParts.length ? watchParts.join(' / ') : (g.streaming ? '' : 'TBD');
 
+  // FOX/CBS/NBC Sunday-afternoon windows air a different regional game in
+  // each market, so a plain network name (no primetime/special tag, no
+  // exclusive streaming window) means "local broadcast only" rather than
+  // "the whole country sees this game."
+  const isLocalBroadcast = !!g.network && !g.isPrimetimeOrSpecial && !g.streaming;
+
   let resultHtml = '';
   if (g.result) {
     const won = /won/i.test(g.result);
@@ -91,6 +97,7 @@ function buildRow(g) {
     '</td>' +
     '<td class="col-watch">' +
       watchLabel +
+      (isLocalBroadcast ? '<span class="local-flag" title="Regional broadcast — not shown nationwide">local</span>' : '') +
       (g.streaming ? '<span class="streaming-pill">' + g.streaming + '</span>' : '') +
       (g.flexEligible ? '<span class="flex-flag">flex-eligible</span>' : '') +
     '</td>';
