@@ -74,13 +74,25 @@ and then `node generate-ics.mjs` to publish the update.
 
 ## Weekly update routine
 
-Not yet wired up for the full 32-team site (it existed for the single-team
-bills-schedule prototype). Worth deciding, once this site has run a few
-weeks, whether one routine covers all 32 teams per run or several routines
-split by division. A single 32-team run is cheaper to operate but needs a
-larger prompt and more care to stay accurate; the research agents used to
-build this data set show a 4-team-per-agent batch works well without
-resorting to further sub-delegation.
+A single cloud routine ("NFL Schedule Weekly Check") runs every Tuesday
+9am ET against this repo. Like the single-team bills-schedule routine
+before it, it has read-only repo access and cannot push, so its job is to
+research and report; a human applies the findings.
+
+Each run does two things:
+
+1. **Standings refresh** (mechanical): runs `fetch-standings.mjs` and
+   reports what changed vs. the currently committed `data/standings.json`.
+2. **Targeted schedule research** (light judgment, not a full re-check):
+   flex-eligible games in the next 14 days, games played but missing a
+   `result`, and Week 17/18 TBD fields once the season is late enough for
+   them to be resolved. Deliberately does not re-verify all ~600 games
+   across 32 teams every week, since that's both expensive and a repeat of
+   the sub-delegation problems seen when the initial 29-team data set was
+   built via parallel research agents.
+
+After a run, apply its reported standings/schedule changes to the data
+files, then `node fetch-standings.mjs && node generate-ics.mjs` and push.
 
 ## Why no GitHub Actions
 
