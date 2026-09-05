@@ -1,0 +1,145 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cincinnati Bengals 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:bengals-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260913T170000Z
+DTEND:20260913T203000Z
+SUMMARY:Bengals vs. Tampa Bay Buccaneers
+DESCRIPTION:Watch: FOX
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260920T170000Z
+DTEND:20260920T203000Z
+SUMMARY:Bengals @ Houston Texans
+DESCRIPTION:Watch: CBS
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260927T170000Z
+DTEND:20260927T203000Z
+SUMMARY:Bengals @ Pittsburgh Steelers
+DESCRIPTION:Watch: CBS
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261004T170000Z
+DTEND:20261004T203000Z
+SUMMARY:Bengals vs. Jacksonville Jaguars
+DESCRIPTION:Watch: CBS
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261011T170000Z
+DTEND:20261011T203000Z
+SUMMARY:Bengals @ Miami Dolphins
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for flex scheduling.
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261025T170000Z
+DTEND:20261025T203000Z
+SUMMARY:Bengals @ Baltimore Ravens
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261101T170000Z
+DTEND:20261101T203000Z
+SUMMARY:Bengals vs. Tennessee Titans
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261108T143000Z
+DTEND:20261108T180000Z
+SUMMARY:Bengals @ Atlanta Falcons
+DESCRIPTION:Watch: NFL Network / NFL+\nInternational Series\, Madrid\, Spai
+ n
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261116T012000Z
+DTEND:20261116T045000Z
+SUMMARY:Bengals vs. Pittsburgh Steelers
+DESCRIPTION:Watch: NBC / Peacock\nSunday Night Football
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week11@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261124T011500Z
+DTEND:20261124T044500Z
+SUMMARY:Bengals @ Washington Commanders
+DESCRIPTION:Watch: ESPN\nMonday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261129T180000Z
+DTEND:20261129T213000Z
+SUMMARY:Bengals vs. New Orleans Saints
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261206T180000Z
+DTEND:20261206T213000Z
+SUMMARY:Bengals @ Cleveland Browns
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261213T212500Z
+DTEND:20261214T005500Z
+SUMMARY:Bengals vs. Kansas City Chiefs
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261220T180000Z
+DTEND:20261220T213000Z
+SUMMARY:Bengals @ Carolina Panthers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bengals-2026-regular-week17@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20270101T011500Z
+DTEND:20270101T044500Z
+SUMMARY:Bengals vs. Baltimore Ravens
+DESCRIPTION:Watch: Prime Video\nThursday Night Football\, New Year's Eve
+LOCATION:Paycor Stadium\, Cincinnati\, OH
+END:VEVENT
+END:VCALENDAR

@@ -1,11 +1,13 @@
 # NFL Schedule Calendars
 
-A prototype multi-team version of [bills-schedule](https://github.com/stevescher/bills-schedule):
-subscribable calendars for multiple NFL teams, one shared landing page with
+A multi-team version of [bills-schedule](https://github.com/stevescher/bills-schedule):
+subscribable calendars for all 32 NFL teams, one shared landing page with
 search, published at [nfl.stevescher.com](https://nfl.stevescher.com).
 
-Currently covers 3 teams (Bills, Giants, Jets) as a scoping exercise before
-expanding to the full league. See "Scaling to 32 teams" below.
+Started as a 3-team prototype (Bills, Giants, Jets) to validate the
+data/page pattern, then scaled to the full league once that pattern proved
+out. See "Adding a team" below for how a new team (or a correction to an
+existing one) gets added.
 
 ## How it works
 
@@ -31,30 +33,34 @@ expanding to the full league. See "Scaling to 32 teams" below.
 - `docs/index.html` is the homepage: team grid plus a typeahead search box
   that matches against `data/teams.json` aliases.
 
-## Adding a team
+## Adding or correcting a team
 
-1. Add an entry to `data/teams.json` (slug, city, name, abbreviation,
-   aliases, colors, stadium).
-2. Add `data/teams/<slug>.json` with that team's schedule.
-3. Copy `docs/bills/index.html` to `docs/<slug>/index.html` and change the
-   `initTeamPage('...')` call to the new slug.
-4. Run `node generate-ics.mjs` and commit everything, including the
-   regenerated `docs/` output.
+1. Add or edit its entry in `data/teams.json` (slug, city, name,
+   abbreviation, aliases, colors, stadium).
+2. Add or edit `data/teams/<slug>.json` with that team's schedule.
+3. Run `node generate-ics.mjs` — this regenerates that team's `.ics`,
+   published data copy, and (for a new team) its `docs/<slug>/index.html`
+   page shell automatically from the canonical template
+   (`docs/bills/index.html`). No manual page-shell copying needed.
+4. Commit everything, including the regenerated `docs/` output.
 
-## Scaling to 32 teams
+## Accent color contrast
 
-The data and page-rendering pattern above already generalizes; the
-remaining work to go from 3 to 32 teams is:
+Several teams' secondary/accent color (light gold, silver) fails contrast
+as a solid button background with white text. `docs/assets/team.js`
+computes each team's accent contrast at runtime (WCAG relative luminance)
+and switches to dark button text automatically when needed — no per-team
+override required in the data.
 
-- Research and enter 29 more `data/teams/<slug>.json` files (the actual
-  time cost here, done a team or a few at a time).
-- Generate 29 more `docs/<slug>/index.html` shells (step 3 above is
-  mechanical and scriptable once the pattern is proven).
-- Decide how the weekly research routine scales: one routine per team is
-  simplest to reason about but multiplies run count; a single routine that
-  checks several teams per run is cheaper per-run but needs a larger
-  prompt and more care to stay accurate. Worth deciding after watching how
-  the single-team routine performs over a few weeks.
+## Weekly update routine
+
+Not yet wired up for the full 32-team site (it existed for the single-team
+bills-schedule prototype). Worth deciding, once this site has run a few
+weeks, whether one routine covers all 32 teams per run or several routines
+split by division — a single 32-team run is cheaper to operate but needs a
+larger prompt and more care to stay accurate; the research agents used to
+build this data set show a 4-team-per-agent batch works well without
+resorting to further sub-delegation.
 
 ## Why no GitHub Actions
 

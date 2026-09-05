@@ -4,7 +4,7 @@
 // docs/data/ so the landing page can fetch them client-side.
 // Games with no confirmed date/time (bye week, unset late weeks) are skipped.
 
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -12,7 +12,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const TEAMS_DIR = join(__dirname, "data", "teams");
 const TEAMS_INDEX_PATH = join(__dirname, "data", "teams.json");
 const OUT_DIR = join(__dirname, "docs");
+const PAGE_TEMPLATE_PATH = join(OUT_DIR, "bills", "index.html");
 const GAME_DURATION_HOURS = 3.5;
+
+// Builds a per-team page shell from the canonical template (docs/bills/index.html),
+// swapping only the initTeamPage('...') slug argument. All markup/branding is
+// data-driven at runtime by docs/assets/team.js, so every team's shell is identical
+// apart from this one line.
+function buildPageShell(templateHtml, slug) {
+  return templateHtml.replace(/initTeamPage\('[a-z0-9]+'\)/, `initTeamPage('${slug}')`);
+}
 
 function pad(n) {
   return String(n).padStart(2, "0");
@@ -169,6 +178,11 @@ function main() {
   // Publish the shared team index (colors, names, aliases for search).
   copyFileSync(TEAMS_INDEX_PATH, join(OUT_DIR, "data", "teams.json"));
 
+  const pageTemplate = existsSync(PAGE_TEMPLATE_PATH) ? readFileSync(PAGE_TEMPLATE_PATH, "utf8") : null;
+  if (!pageTemplate) {
+    console.warn(`Warning: page template not found at ${PAGE_TEMPLATE_PATH}; skipping page-shell generation.`);
+  }
+
   const teamFiles = readdirSync(TEAMS_DIR).filter((f) => f.endsWith(".json"));
   const foundSlugs = new Set();
 
@@ -189,6 +203,12 @@ function main() {
     console.log(`Wrote ${eventCount} events to ${icsPath}`);
 
     copyFileSync(join(TEAMS_DIR, file), join(publishedTeamsDataDir, `${slug}.json`));
+
+    if (pageTemplate) {
+      const pageDir = join(OUT_DIR, slug);
+      mkdirSync(pageDir, { recursive: true });
+      writeFileSync(join(pageDir, "index.html"), buildPageShell(pageTemplate, slug), "utf8");
+    }
   }
 
   const missing = teamsIndex.teams.filter((t) => !foundSlugs.has(t.slug));

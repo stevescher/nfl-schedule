@@ -1,0 +1,147 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Carolina Panthers 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:panthers-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260913T170000Z
+DTEND:20260913T203000Z
+SUMMARY:Panthers vs. Chicago Bears
+DESCRIPTION:Watch: FOX
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260920T170000Z
+DTEND:20260920T203000Z
+SUMMARY:Panthers @ Atlanta Falcons
+DESCRIPTION:Watch: FOX
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260927T170000Z
+DTEND:20260927T203000Z
+SUMMARY:Panthers @ Cleveland Browns
+DESCRIPTION:Watch: FOX
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261005T002000Z
+DTEND:20261005T035000Z
+SUMMARY:Panthers vs. Detroit Lions
+DESCRIPTION:Watch: NBC\nSunday Night Football
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week06@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261018T170000Z
+DTEND:20261018T203000Z
+SUMMARY:Panthers @ Philadelphia Eagles
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for flex scheduling.
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261025T170000Z
+DTEND:20261025T203000Z
+SUMMARY:Panthers vs. Tampa Bay Buccaneers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261030T001500Z
+DTEND:20261030T034500Z
+SUMMARY:Panthers @ Green Bay Packers
+DESCRIPTION:Watch: Prime Video\nThursday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261108T180000Z
+DTEND:20261108T213000Z
+SUMMARY:Panthers vs. Denver Broncos
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261115T180000Z
+DTEND:20261115T213000Z
+SUMMARY:Panthers @ New Orleans Saints
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week11@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261122T180000Z
+DTEND:20261122T213000Z
+SUMMARY:Panthers vs. Baltimore Ravens
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261201T011500Z
+DTEND:20261201T044500Z
+SUMMARY:Panthers @ Tampa Bay Buccaneers
+DESCRIPTION:Watch: ESPN\nMonday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261206T212500Z
+DTEND:20261207T005500Z
+SUMMARY:Panthers @ Minnesota Vikings
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261213T180000Z
+DTEND:20261213T213000Z
+SUMMARY:Panthers vs. New Orleans Saints
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261220T180000Z
+DTEND:20261220T213000Z
+SUMMARY:Panthers vs. Cincinnati Bengals
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+BEGIN:VEVENT
+UID:panthers-2026-regular-week17@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20270103T180000Z
+DTEND:20270103T213000Z
+SUMMARY:Panthers vs. Seattle Seahawks
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+END:VEVENT
+END:VCALENDAR

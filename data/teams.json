@@ -7,11 +7,7 @@
       "fullName": "Buffalo Bills",
       "abbreviation": "BUF",
       "aliases": ["buffalo", "buffalo bills", "bills", "buf"],
-      "colors": {
-        "primary": "#00338d",
-        "primaryDeep": "#001d54",
-        "accent": "#c60c30"
-      },
+      "colors": { "primary": "#00338d", "primaryDeep": "#001d54", "accent": "#c60c30" },
       "stadium": "Highmark Stadium, Orchard Park, NY"
     },
     {
@@ -21,11 +17,7 @@
       "fullName": "New York Giants",
       "abbreviation": "NYG",
       "aliases": ["giants", "new york giants", "ny giants", "nyg"],
-      "colors": {
-        "primary": "#0b2265",
-        "primaryDeep": "#04123a",
-        "accent": "#a71930"
-      },
+      "colors": { "primary": "#0b2265", "primaryDeep": "#04123a", "accent": "#a71930" },
       "stadium": "MetLife Stadium, East Rutherford, NJ"
     },
     {
@@ -35,12 +27,298 @@
       "fullName": "New York Jets",
       "abbreviation": "NYJ",
       "aliases": ["jets", "new york jets", "ny jets", "nyj", "gang green"],
-      "colors": {
-        "primary": "#125740",
-        "primaryDeep": "#0a2e21",
-        "accent": "#000000"
-      },
+      "colors": { "primary": "#125740", "primaryDeep": "#0a2e21", "accent": "#000000" },
       "stadium": "MetLife Stadium, East Rutherford, NJ"
+    },
+    {
+      "slug": "dolphins",
+      "city": "Miami",
+      "name": "Dolphins",
+      "fullName": "Miami Dolphins",
+      "abbreviation": "MIA",
+      "aliases": ["miami", "miami dolphins", "dolphins", "fins", "mia"],
+      "colors": { "primary": "#008E97", "primaryDeep": "#004e53", "accent": "#FC4C02" },
+      "stadium": "Hard Rock Stadium, Miami Gardens, FL"
+    },
+    {
+      "slug": "patriots",
+      "city": "New England",
+      "name": "Patriots",
+      "fullName": "New England Patriots",
+      "abbreviation": "NE",
+      "aliases": ["patriots", "new england", "new england patriots", "pats", "ne"],
+      "colors": { "primary": "#002244", "primaryDeep": "#001325", "accent": "#c60c30" },
+      "stadium": "Gillette Stadium, Foxborough, MA"
+    },
+    {
+      "slug": "ravens",
+      "city": "Baltimore",
+      "name": "Ravens",
+      "fullName": "Baltimore Ravens",
+      "abbreviation": "BAL",
+      "aliases": ["baltimore", "baltimore ravens", "ravens", "bal"],
+      "colors": { "primary": "#241773", "primaryDeep": "#140d3f", "accent": "#9E7C0C" },
+      "stadium": "M&T Bank Stadium, Baltimore, MD"
+    },
+    {
+      "slug": "bengals",
+      "city": "Cincinnati",
+      "name": "Bengals",
+      "fullName": "Cincinnati Bengals",
+      "abbreviation": "CIN",
+      "aliases": ["cincinnati", "cincinnati bengals", "bengals", "cin"],
+      "colors": { "primary": "#1a1a1a", "primaryDeep": "#000000", "accent": "#FB4F14" },
+      "stadium": "Paycor Stadium, Cincinnati, OH"
+    },
+    {
+      "slug": "browns",
+      "city": "Cleveland",
+      "name": "Browns",
+      "fullName": "Cleveland Browns",
+      "abbreviation": "CLE",
+      "aliases": ["cleveland", "cleveland browns", "browns", "cle"],
+      "colors": { "primary": "#FF3C00", "primaryDeep": "#8c2100", "accent": "#311D00" },
+      "stadium": "Huntington Bank Field, Cleveland, OH"
+    },
+    {
+      "slug": "steelers",
+      "city": "Pittsburgh",
+      "name": "Steelers",
+      "fullName": "Pittsburgh Steelers",
+      "abbreviation": "PIT",
+      "aliases": ["pittsburgh", "pittsburgh steelers", "steelers", "pit"],
+      "colors": { "primary": "#1a1a1a", "primaryDeep": "#000000", "accent": "#FFB612" },
+      "stadium": "Acrisure Stadium, Pittsburgh, PA"
+    },
+    {
+      "slug": "texans",
+      "city": "Houston",
+      "name": "Texans",
+      "fullName": "Houston Texans",
+      "abbreviation": "HOU",
+      "aliases": ["houston", "houston texans", "texans", "hou"],
+      "colors": { "primary": "#03202F", "primaryDeep": "#02121a", "accent": "#A71930" },
+      "stadium": "Reliant Stadium, Houston, TX"
+    },
+    {
+      "slug": "colts",
+      "city": "Indianapolis",
+      "name": "Colts",
+      "fullName": "Indianapolis Colts",
+      "abbreviation": "IND",
+      "aliases": ["indianapolis", "indianapolis colts", "colts", "ind"],
+      "colors": { "primary": "#002C5F", "primaryDeep": "#001834", "accent": "#A2AAAD" },
+      "stadium": "Lucas Oil Stadium, Indianapolis, IN"
+    },
+    {
+      "slug": "jaguars",
+      "city": "Jacksonville",
+      "name": "Jaguars",
+      "fullName": "Jacksonville Jaguars",
+      "abbreviation": "JAX",
+      "aliases": ["jacksonville", "jacksonville jaguars", "jaguars", "jags", "jax"],
+      "colors": { "primary": "#006778", "primaryDeep": "#003942", "accent": "#D7A22A" },
+      "stadium": "EverBank Stadium, Jacksonville, FL"
+    },
+    {
+      "slug": "titans",
+      "city": "Tennessee",
+      "name": "Titans",
+      "fullName": "Tennessee Titans",
+      "abbreviation": "TEN",
+      "aliases": ["tennessee", "tennessee titans", "titans", "nashville", "ten"],
+      "colors": { "primary": "#0C2340", "primaryDeep": "#071323", "accent": "#4B92DB" },
+      "stadium": "Nissan Stadium, Nashville, TN"
+    },
+    {
+      "slug": "broncos",
+      "city": "Denver",
+      "name": "Broncos",
+      "fullName": "Denver Broncos",
+      "abbreviation": "DEN",
+      "aliases": ["denver", "denver broncos", "broncos", "den"],
+      "colors": { "primary": "#FB4F14", "primaryDeep": "#8a2b0b", "accent": "#002244" },
+      "stadium": "Empower Field at Mile High, Denver, CO"
+    },
+    {
+      "slug": "chiefs",
+      "city": "Kansas City",
+      "name": "Chiefs",
+      "fullName": "Kansas City Chiefs",
+      "abbreviation": "KC",
+      "aliases": ["kansas city", "kansas city chiefs", "chiefs", "kc"],
+      "colors": { "primary": "#E31837", "primaryDeep": "#7d0d1e", "accent": "#FFB81C" },
+      "stadium": "GEHA Field at Arrowhead Stadium, Kansas City, MO"
+    },
+    {
+      "slug": "raiders",
+      "city": "Las Vegas",
+      "name": "Raiders",
+      "fullName": "Las Vegas Raiders",
+      "abbreviation": "LV",
+      "aliases": ["las vegas", "las vegas raiders", "raiders", "oakland", "lv"],
+      "colors": { "primary": "#1a1a1a", "primaryDeep": "#000000", "accent": "#A5ACAF" },
+      "stadium": "Allegiant Stadium, Las Vegas, NV"
+    },
+    {
+      "slug": "chargers",
+      "city": "Los Angeles",
+      "name": "Chargers",
+      "fullName": "Los Angeles Chargers",
+      "abbreviation": "LAC",
+      "aliases": ["los angeles chargers", "chargers", "la chargers", "lac"],
+      "colors": { "primary": "#0080C6", "primaryDeep": "#00466d", "accent": "#FFC20E" },
+      "stadium": "SoFi Stadium, Inglewood, CA"
+    },
+    {
+      "slug": "cowboys",
+      "city": "Dallas",
+      "name": "Cowboys",
+      "fullName": "Dallas Cowboys",
+      "abbreviation": "DAL",
+      "aliases": ["dallas", "dallas cowboys", "cowboys", "dal"],
+      "colors": { "primary": "#003594", "primaryDeep": "#001d51", "accent": "#869397" },
+      "stadium": "AT&T Stadium, Arlington, TX"
+    },
+    {
+      "slug": "eagles",
+      "city": "Philadelphia",
+      "name": "Eagles",
+      "fullName": "Philadelphia Eagles",
+      "abbreviation": "PHI",
+      "aliases": ["philadelphia", "philadelphia eagles", "eagles", "philly", "phi"],
+      "colors": { "primary": "#004C54", "primaryDeep": "#002a2e", "accent": "#A5ACAF" },
+      "stadium": "Lincoln Financial Field, Philadelphia, PA"
+    },
+    {
+      "slug": "commanders",
+      "city": "Washington",
+      "name": "Commanders",
+      "fullName": "Washington Commanders",
+      "abbreviation": "WAS",
+      "aliases": ["washington", "washington commanders", "commanders", "was"],
+      "colors": { "primary": "#5A1414", "primaryDeep": "#320b0b", "accent": "#FFB612" },
+      "stadium": "Northwest Stadium, Landover, MD"
+    },
+    {
+      "slug": "bears",
+      "city": "Chicago",
+      "name": "Bears",
+      "fullName": "Chicago Bears",
+      "abbreviation": "CHI",
+      "aliases": ["chicago", "chicago bears", "bears", "chi"],
+      "colors": { "primary": "#0B162A", "primaryDeep": "#060c17", "accent": "#C83803" },
+      "stadium": "Soldier Field, Chicago, IL"
+    },
+    {
+      "slug": "lions",
+      "city": "Detroit",
+      "name": "Lions",
+      "fullName": "Detroit Lions",
+      "abbreviation": "DET",
+      "aliases": ["detroit", "detroit lions", "lions", "det"],
+      "colors": { "primary": "#0076B6", "primaryDeep": "#004164", "accent": "#B0B7BC" },
+      "stadium": "Ford Field, Detroit, MI"
+    },
+    {
+      "slug": "packers",
+      "city": "Green Bay",
+      "name": "Packers",
+      "fullName": "Green Bay Packers",
+      "abbreviation": "GB",
+      "aliases": ["green bay", "green bay packers", "packers", "gb"],
+      "colors": { "primary": "#203731", "primaryDeep": "#121e1b", "accent": "#FFB612" },
+      "stadium": "Lambeau Field, Green Bay, WI"
+    },
+    {
+      "slug": "vikings",
+      "city": "Minnesota",
+      "name": "Vikings",
+      "fullName": "Minnesota Vikings",
+      "abbreviation": "MIN",
+      "aliases": ["minnesota", "minnesota vikings", "vikings", "min"],
+      "colors": { "primary": "#4F2683", "primaryDeep": "#2b1548", "accent": "#FFC62F" },
+      "stadium": "U.S. Bank Stadium, Minneapolis, MN"
+    },
+    {
+      "slug": "falcons",
+      "city": "Atlanta",
+      "name": "Falcons",
+      "fullName": "Atlanta Falcons",
+      "abbreviation": "ATL",
+      "aliases": ["atlanta", "atlanta falcons", "falcons", "atl"],
+      "colors": { "primary": "#A71930", "primaryDeep": "#5c0e1a", "accent": "#A5ACAF" },
+      "stadium": "Mercedes-Benz Stadium, Atlanta, GA"
+    },
+    {
+      "slug": "panthers",
+      "city": "Carolina",
+      "name": "Panthers",
+      "fullName": "Carolina Panthers",
+      "abbreviation": "CAR",
+      "aliases": ["carolina", "carolina panthers", "panthers", "charlotte", "car"],
+      "colors": { "primary": "#0085CA", "primaryDeep": "#00496f", "accent": "#101820" },
+      "stadium": "Bank of America Stadium, Charlotte, NC"
+    },
+    {
+      "slug": "saints",
+      "city": "New Orleans",
+      "name": "Saints",
+      "fullName": "New Orleans Saints",
+      "abbreviation": "NO",
+      "aliases": ["new orleans", "new orleans saints", "saints", "no"],
+      "colors": { "primary": "#9b8552", "primaryDeep": "#544829", "accent": "#101820" },
+      "stadium": "Caesars Superdome, New Orleans, LA"
+    },
+    {
+      "slug": "buccaneers",
+      "city": "Tampa Bay",
+      "name": "Buccaneers",
+      "fullName": "Tampa Bay Buccaneers",
+      "abbreviation": "TB",
+      "aliases": ["tampa bay", "tampa bay buccaneers", "buccaneers", "bucs", "tb"],
+      "colors": { "primary": "#D50A0A", "primaryDeep": "#750606", "accent": "#34302B" },
+      "stadium": "Raymond James Stadium, Tampa, FL"
+    },
+    {
+      "slug": "cardinals",
+      "city": "Arizona",
+      "name": "Cardinals",
+      "fullName": "Arizona Cardinals",
+      "abbreviation": "ARI",
+      "aliases": ["arizona", "arizona cardinals", "cardinals", "phoenix", "ari"],
+      "colors": { "primary": "#97233F", "primaryDeep": "#531323", "accent": "#FFB612" },
+      "stadium": "State Farm Stadium, Glendale, AZ"
+    },
+    {
+      "slug": "rams",
+      "city": "Los Angeles",
+      "name": "Rams",
+      "fullName": "Los Angeles Rams",
+      "abbreviation": "LAR",
+      "aliases": ["los angeles rams", "rams", "la rams", "lar"],
+      "colors": { "primary": "#003594", "primaryDeep": "#001d51", "accent": "#FFA300" },
+      "stadium": "SoFi Stadium, Inglewood, CA"
+    },
+    {
+      "slug": "49ers",
+      "city": "San Francisco",
+      "name": "49ers",
+      "fullName": "San Francisco 49ers",
+      "abbreviation": "SF",
+      "aliases": ["san francisco", "san francisco 49ers", "49ers", "niners", "sf"],
+      "colors": { "primary": "#AA0000", "primaryDeep": "#5e0000", "accent": "#B3995D" },
+      "stadium": "Levi's Stadium, Santa Clara, CA"
+    },
+    {
+      "slug": "seahawks",
+      "city": "Seattle",
+      "name": "Seahawks",
+      "fullName": "Seattle Seahawks",
+      "abbreviation": "SEA",
+      "aliases": ["seattle", "seattle seahawks", "seahawks", "sea"],
+      "colors": { "primary": "#002244", "primaryDeep": "#001325", "accent": "#69BE28" },
+      "stadium": "Lumen Field, Seattle, WA"
     }
   ]
 }

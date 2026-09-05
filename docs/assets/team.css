@@ -2,6 +2,7 @@
   --team-primary: #00338d;
   --team-primary-deep: #001d54;
   --team-accent: #c60c30;
+  --team-accent-text: #ffffff;
   --bg: #eef0f4;
   --paper: #ffffff;
   --ink: #1b1e27;
@@ -222,7 +223,7 @@ a { color: inherit; }
   letter-spacing: 0.01em;
 }
 .btn:active { transform: scale(0.97); }
-.btn-primary { background: var(--team-accent); color: #fff; }
+.btn-primary { background: var(--team-accent); color: var(--team-accent-text, #fff); }
 .btn-primary:hover { filter: brightness(0.88); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--team-primary); color: var(--team-primary); }
@@ -362,7 +363,7 @@ a { color: inherit; }
   padding: 1.5px 6px;
   border-radius: 2px;
   background: var(--team-accent);
-  color: #fff;
+  color: var(--team-accent-text, #fff);
   margin-top: 3px;
 }
 
