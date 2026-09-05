@@ -135,6 +135,27 @@
   }
   .section-head .count { font-size: 12px; color: var(--ink-soft); font-weight: 600; }
 
+  .conference-block { margin-bottom: 8px; }
+  .conference-label {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .division-block { margin-bottom: 32px; }
+  .division-block:last-child { margin-bottom: 0; }
+  .division-head {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -215,7 +236,7 @@
       <h2>All Teams</h2>
       <span class="count" id="available-count"></span>
     </div>
-    <div class="team-grid" id="team-grid"></div>
+    <div id="team-sections"></div>
 
     <footer>
       Schedules compiled from official NFL and team sources, checked weekly for updates.<br>
@@ -224,8 +245,19 @@
   </div>
 
 <script>
+function teamCard(t) {
+  const card = document.createElement('a');
+  card.className = 'team-card';
+  card.href = '/' + t.slug + '/';
+  card.innerHTML =
+    '<div class="bar" style="background:' + t.colors.primary + '"></div>' +
+    '<div class="city">' + t.city + '</div>' +
+    '<div class="name">' + t.name + '</div>';
+  return card;
+}
+
 async function main() {
-  const grid = document.getElementById('team-grid');
+  const sections = document.getElementById('team-sections');
   const countEl = document.getElementById('available-count');
   const searchInput = document.getElementById('team-search');
   const resultsEl = document.getElementById('search-results');
@@ -236,24 +268,56 @@ async function main() {
     const data = await res.json();
     teams = data.teams;
   } catch (e) {
-    grid.innerHTML = '<div class="coming-soon">Could not load team list. Try refreshing.</div>';
+    sections.innerHTML = '<div class="coming-soon">Could not load team list. Try refreshing.</div>';
     return;
   }
 
   countEl.textContent = teams.length + ' team' + (teams.length === 1 ? '' : 's');
 
-  const frag = document.createDocumentFragment();
+  const byDivision = new Map();
   for (const t of teams) {
-    const card = document.createElement('a');
-    card.className = 'team-card';
-    card.href = '/' + t.slug + '/';
-    card.innerHTML =
-      '<div class="bar" style="background:' + t.colors.primary + '"></div>' +
-      '<div class="city">' + t.city + '</div>' +
-      '<div class="name">' + t.name + '</div>';
-    frag.appendChild(card);
+    const div = t.division || 'Other';
+    if (!byDivision.has(div)) byDivision.set(div, []);
+    byDivision.get(div).push(t);
   }
-  grid.appendChild(frag);
+
+  const conferenceOrder = ['AFC', 'NFC'];
+  const divisionOrder = ['East', 'North', 'South', 'West'];
+  const allDivisions = [...byDivision.keys()].sort((a, b) => {
+    const [confA, dirA] = a.split(' ');
+    const [confB, dirB] = b.split(' ');
+    const confDiff = conferenceOrder.indexOf(confA) - conferenceOrder.indexOf(confB);
+    if (confDiff !== 0) return confDiff;
+    return divisionOrder.indexOf(dirA) - divisionOrder.indexOf(dirB);
+  });
+
+  const frag = document.createDocumentFragment();
+  let currentConference = null;
+  let conferenceGrid = null;
+
+  for (const division of allDivisions) {
+    const conference = division.split(' ')[0];
+    if (conference !== currentConference) {
+      currentConference = conference;
+      const confBlock = document.createElement('div');
+      confBlock.className = 'conference-block';
+      confBlock.innerHTML = '<p class="conference-label">' + (conference === 'AFC' ? 'AMERICAN FOOTBALL CONFERENCE' : 'NATIONAL FOOTBALL CONFERENCE') + '</p>';
+      frag.appendChild(confBlock);
+    }
+
+    const divBlock = document.createElement('div');
+    divBlock.className = 'division-block';
+    divBlock.innerHTML = '<h3 class="division-head">' + division + '</h3>';
+
+    const grid = document.createElement('div');
+    grid.className = 'team-grid';
+    byDivision.get(division).forEach((t) => grid.appendChild(teamCard(t)));
+    divBlock.appendChild(grid);
+
+    frag.appendChild(divBlock);
+  }
+
+  sections.appendChild(frag);
 
   function matchScore(team, query) {
     const q = query.toLowerCase().trim();
