@@ -33,7 +33,7 @@
     background: #101319;
     background-image: linear-gradient(160deg, #1a1f2b 0%, #0a0c10 100%);
     color: #fff;
-    padding: 0 0 44px;
+    padding: 46px 20px 44px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -45,13 +45,7 @@
     background: repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 34px);
     pointer-events: none;
   }
-  .color-strip {
-    display: flex;
-    height: 6px;
-    width: 100%;
-  }
-  .color-strip span { flex: 1; }
-  .masthead-inner { padding: 46px 20px 0; position: relative; }
+  .masthead-inner { position: relative; }
   .masthead h1 {
     font-family: 'Archivo Black', sans-serif;
     font-size: clamp(32px, 6vw, 52px);
@@ -198,33 +192,41 @@
   .team-card {
     display: block;
     text-decoration: none;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--card-color, var(--line));
+    background: var(--card-primary, var(--paper));
+    background-image: linear-gradient(160deg, var(--card-primary, var(--paper)) 0%, var(--card-primary-deep, var(--paper)) 100%);
     border-radius: 8px;
+    border-bottom: 4px solid var(--card-accent, var(--line));
     padding: 16px 18px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.12s ease, box-shadow 0.15s ease, border-left-width 0.12s ease;
+    transition: transform 0.12s ease, box-shadow 0.15s ease;
+  }
+  .team-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 24px);
+    pointer-events: none;
   }
   .team-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px -14px rgba(0,0,0,0.3);
-    border-left-width: 8px;
+    box-shadow: 0 12px 26px -14px rgba(0,0,0,0.4);
   }
   .team-card .city {
     font-size: 10.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--ink-soft);
+    color: rgba(255,255,255,0.65);
+    position: relative;
   }
   .team-card .name {
     font-family: 'Archivo Black', sans-serif;
     font-size: 19px;
     text-transform: uppercase;
     margin-top: 2px;
-    color: var(--card-color, var(--ink));
+    color: #fff;
+    position: relative;
   }
 
   .coming-soon {
@@ -251,11 +253,10 @@
 
   <div class="masthead">
     <div class="masthead-inner">
-      <div class="eyebrow"><span class="dot"></span> ALL 32 TEAMS &middot; 2026 SEASON</div>
+      <div class="eyebrow"><span class="dot"></span> 2026 SEASON</div>
       <h1>NFL <span class="accent">Schedules</span></h1>
       <p>Search your team. Get a calendar that stays current all season, with kickoff times and where to watch every game.</p>
     </div>
-    <div class="color-strip" id="color-strip"></div>
   </div>
 
   <div class="search-wrap">
@@ -280,30 +281,13 @@
   </div>
 
 <script>
-// WCAG relative luminance / contrast, used to fall back to a team's
-// secondary color when the primary is too light to read as text on white.
-function relativeLuminance(hex) {
-  const h = hex.replace('#', '');
-  const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.substring(i, i + 2), 16) / 255);
-  const lin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
-  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
-}
-
-function contrastRatio(hex1, hex2) {
-  const l1 = relativeLuminance(hex1);
-  const l2 = relativeLuminance(hex2);
-  const [lighter, darker] = l1 > l2 ? [l1, l2] : [l2, l1];
-  return (lighter + 0.05) / (darker + 0.05);
-}
-
 function teamCard(t) {
   const card = document.createElement('a');
   card.className = 'team-card';
   card.href = '/' + t.slug + '/';
-  // Bold-text-on-white needs 3.0+ contrast (WCAG large-text threshold);
-  // fall back to the accent color for the rare primary that's too light.
-  const cardColor = contrastRatio(t.colors.primary, '#ffffff') >= 3.0 ? t.colors.primary : t.colors.accent;
-  card.style.setProperty('--card-color', cardColor);
+  card.style.setProperty('--card-primary', t.colors.primary);
+  card.style.setProperty('--card-primary-deep', t.colors.primaryDeep);
+  card.style.setProperty('--card-accent', t.colors.accent);
   card.innerHTML =
     '<div class="city">' + t.city + '</div>' +
     '<div class="name">' + t.name + '</div>';
@@ -327,13 +311,6 @@ async function main() {
   }
 
   countEl.textContent = teams.length + ' team' + (teams.length === 1 ? '' : 's');
-
-  const colorStrip = document.getElementById('color-strip');
-  if (colorStrip) {
-    colorStrip.innerHTML = teams
-      .map((t) => '<span style="background:' + t.colors.primary + '"></span>')
-      .join('');
-  }
 
   const byDivision = new Map();
   for (const t of teams) {
