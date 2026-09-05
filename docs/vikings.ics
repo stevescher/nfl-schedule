@@ -1,0 +1,146 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Minnesota Vikings 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:vikings-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260913T202500Z
+DTEND:20260913T235500Z
+SUMMARY:Vikings vs. Green Bay Packers
+DESCRIPTION:Watch: CBS
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260920T170000Z
+DTEND:20260920T203000Z
+SUMMARY:Vikings @ Chicago Bears
+DESCRIPTION:Watch: FOX
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260927T200500Z
+DTEND:20260927T233500Z
+SUMMARY:Vikings @ Tampa Bay Buccaneers
+DESCRIPTION:Watch: FOX
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261004T200500Z
+DTEND:20261004T233500Z
+SUMMARY:Vikings vs. Miami Dolphins
+DESCRIPTION:Watch: FOX
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261011T170000Z
+DTEND:20261011T203000Z
+SUMMARY:Vikings @ New Orleans Saints
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for flex scheduling.
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261025T170000Z
+DTEND:20261025T203000Z
+SUMMARY:Vikings vs. Indianapolis Colts
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261101T170000Z
+DTEND:20261101T203000Z
+SUMMARY:Vikings @ Detroit Lions
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261110T011500Z
+DTEND:20261110T044500Z
+SUMMARY:Vikings vs. Buffalo Bills
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261115T180000Z
+DTEND:20261115T213000Z
+SUMMARY:Vikings @ Green Bay Packers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week11@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261123T012000Z
+DTEND:20261123T045000Z
+SUMMARY:Vikings vs. San Francisco 49ers
+DESCRIPTION:Watch: NBC\nSunday Night Football\, International Series Mexico
+  City (Vikings designated home team\, first-ever Vikings game in Mexico)
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261129T180000Z
+DTEND:20261129T213000Z
+SUMMARY:Vikings vs. Atlanta Falcons
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261206T212500Z
+DTEND:20261207T005500Z
+SUMMARY:Vikings vs. Carolina Panthers
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261211T011500Z
+DTEND:20261211T044500Z
+SUMMARY:Vikings @ New England Patriots
+DESCRIPTION:Watch: Prime Video\nThursday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261221T012000Z
+DTEND:20261221T045000Z
+SUMMARY:Vikings vs. Detroit Lions
+DESCRIPTION:Watch: NBC\nSunday Night Football
+LOCATION:U.S. Bank Stadium\, Minneapolis\, MN
+END:VEVENT
+BEGIN:VEVENT
+UID:vikings-2026-regular-week17@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20270103T180000Z
+DTEND:20270103T213000Z
+SUMMARY:Vikings @ New York Jets
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+END:VCALENDAR

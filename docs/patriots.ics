@@ -1,0 +1,171 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:New England Patriots 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:patriots-2026-preseason-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260813T230000Z
+DTEND:20260814T023000Z
+SUMMARY:Patriots vs. Indianapolis Colts (Preseason)
+DESCRIPTION:Watch: TBD
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-preseason-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260822T230000Z
+DTEND:20260823T023000Z
+SUMMARY:Patriots vs. Philadelphia Eagles (Preseason)
+DESCRIPTION:Watch: TBD
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-preseason-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260827T230000Z
+DTEND:20260828T023000Z
+SUMMARY:Patriots @ Cleveland Browns (Preseason)
+DESCRIPTION:Watch: TBD
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260910T002000Z
+DTEND:20260910T035000Z
+SUMMARY:Patriots @ Seattle Seahawks
+DESCRIPTION:Watch: NBC\nNFL Kickoff Game\, Wednesday night\, Super Bowl LX 
+ rematch\, first-ever Wednesday game in franchise history
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260920T170000Z
+DTEND:20260920T203000Z
+SUMMARY:Patriots vs. Pittsburgh Steelers
+DESCRIPTION:Watch: CBS
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260927T170000Z
+DTEND:20260927T203000Z
+SUMMARY:Patriots @ Jacksonville Jaguars
+DESCRIPTION:Watch: CBS
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261004T170000Z
+DTEND:20261004T203000Z
+SUMMARY:Patriots @ Buffalo Bills
+DESCRIPTION:Watch: CBS
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261011T170000Z
+DTEND:20261011T203000Z
+SUMMARY:Patriots vs. Las Vegas Raiders
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for flex scheduling.
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week06@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261018T170000Z
+DTEND:20261018T203000Z
+SUMMARY:Patriots vs. New York Jets
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261023T001500Z
+DTEND:20261023T034500Z
+SUMMARY:Patriots @ Chicago Bears
+DESCRIPTION:Watch: Prime Video\nThursday Night Football\nStreaming exclusiv
+ e on Prime Video.
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261101T202500Z
+DTEND:20261101T235500Z
+SUMMARY:Patriots @ Miami Dolphins
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261108T212500Z
+DTEND:20261109T005500Z
+SUMMARY:Patriots vs. Green Bay Packers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261115T143000Z
+DTEND:20261115T180000Z
+SUMMARY:Patriots @ Detroit Lions
+DESCRIPTION:Watch: FOX\nInternational Series\, Munich\, Germany
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261130T012000Z
+DTEND:20261130T045000Z
+SUMMARY:Patriots @ Los Angeles Chargers
+DESCRIPTION:Watch: NBC\nSunday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261206T212500Z
+DTEND:20261207T005500Z
+SUMMARY:Patriots vs. Buffalo Bills
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261211T011500Z
+DTEND:20261211T044500Z
+SUMMARY:Patriots vs. Minnesota Vikings
+DESCRIPTION:Watch: Prime Video\nThursday Night Football\nStreaming exclusiv
+ e on Prime Video.
+LOCATION:Gillette Stadium\, Foxborough\, MA
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261222T011500Z
+DTEND:20261222T044500Z
+SUMMARY:Patriots @ Kansas City Chiefs
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:patriots-2026-regular-week16@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261227T180000Z
+DTEND:20261227T213000Z
+SUMMARY:Patriots @ New York Jets
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+END:VCALENDAR

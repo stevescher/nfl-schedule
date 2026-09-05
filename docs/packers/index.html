@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Team Schedule</title>
+<meta name="description" content="Every game this season: dates, kickoff times, and where to watch. Subscribe once, stays current all year." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/team.css">
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="topnav-inner">
+      <a class="back-pill" href="/">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        All Teams
+      </a>
+      <div class="topnav-search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="team-search" placeholder="Switch team..." autocomplete="off" />
+        <div class="topnav-results" id="search-results" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="eyebrow"><span class="dot"></span> <span id="team-city">2026 SEASON</span></div>
+      <h1><span id="team-name">Team</span><br><span class="accent">Full Schedule</span></h1>
+      <p class="sub">Every kickoff, every channel, straight from the official league release. Checked weekly so nothing catches you off guard.</p>
+      <div class="record-strip">
+        <span><b id="stat-games">17</b> regular season games</span>
+        <span><b id="stat-bye">Week 7</b> bye</span>
+        <span><b id="stat-primetime">6</b> primetime slots</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subscribe-bar">
+    <div class="subscribe-card">
+      <div class="label">Get it on your calendar</div>
+      <div class="subscribe-actions">
+        <a class="btn btn-primary" id="webcal-link" href="#">Subscribe (Apple / Outlook)</a>
+        <a class="btn btn-ghost" id="google-link" href="#" target="_blank" rel="noopener">Google Calendar</a>
+        <a class="btn btn-ghost" id="ics-link" href="#" download>Download .ics</a>
+      </div>
+      <div class="link-row">
+        <span class="url-box" id="ics-url">loading...</span>
+        <button class="copy-btn" id="copy-btn" type="button">Copy</button>
+      </div>
+      <div class="subscribe-note">Subscribe once. Flex schedule changes, time moves, and network updates sync to your calendar automatically. No re-downloading.</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div id="status">Loading schedule...</div>
+    <div id="sections" hidden></div>
+
+    <footer>
+      Schedule compiled from official NFL and team sources, checked weekly for updates.<br>
+      Not an official NFL product. <span id="last-updated"></span>
+    </footer>
+  </div>
+
+<script src="/assets/team.js"></script>
+<script>initTeamPage('packers');</script>
+</body>
+</html>

@@ -4,6 +4,27 @@ const SEASON_LABELS = {
   postseason: 'Postseason',
 };
 
+// WCAG relative luminance / contrast ratio, used to pick readable text color
+// against a team's accent color (many teams' accent is a light gold/silver
+// that fails contrast with white button text).
+function relativeLuminance(hex) {
+  const h = hex.replace('#', '');
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.substring(i, i + 2), 16) / 255);
+  const lin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+}
+
+function contrastRatio(hex1, hex2) {
+  const l1 = relativeLuminance(hex1);
+  const l2 = relativeLuminance(hex2);
+  const [lighter, darker] = l1 > l2 ? [l1, l2] : [l2, l1];
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function readableTextColor(backgroundHex) {
+  return contrastRatio(backgroundHex, '#ffffff') >= 3.0 ? '#ffffff' : '#16181d';
+}
+
 function dayFmt(dateStr) {
   if (!dateStr) return { weekday: 'TBD', rest: '' };
   const [y, m, d] = dateStr.split('-').map(Number);
@@ -53,8 +74,10 @@ function buildRow(g) {
     resultHtml = '<div class="result-line ' + (won ? 'win' : lost ? 'loss' : '') + '">' + g.result + '</div>';
   }
 
+  const weekLabel = g.week === 0 ? 'HOF' : g.week;
+
   tr.innerHTML =
-    '<td class="col-week">' + g.week + '</td>' +
+    '<td class="col-week">' + weekLabel + '</td>' +
     '<td class="col-date"><span class="weekday">' + d.weekday + '</span>' + d.rest + '</td>' +
     '<td class="col-matchup">' +
       '<div class="opp-line">' +
@@ -192,6 +215,7 @@ async function initTeamPage(slug) {
   document.documentElement.style.setProperty('--team-primary', teamMeta.colors.primary);
   document.documentElement.style.setProperty('--team-primary-deep', teamMeta.colors.primaryDeep);
   document.documentElement.style.setProperty('--team-accent', teamMeta.colors.accent);
+  document.documentElement.style.setProperty('--team-accent-text', readableTextColor(teamMeta.colors.accent));
   document.title = teamMeta.fullName + ' Schedule';
 
   const cityEl = document.getElementById('team-city');

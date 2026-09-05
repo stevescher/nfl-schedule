@@ -1,0 +1,151 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Los Angeles Rams 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:rams-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260911T003500Z
+DTEND:20260911T040500Z
+SUMMARY:Rams vs. San Francisco 49ers
+DESCRIPTION:Watch: Netflix\nInternational Series\, Melbourne\, Australia (M
+ elbourne Cricket Ground\; Rams designated home team though neutral site)\,
+  Thursday
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260922T001500Z
+DTEND:20260922T034500Z
+SUMMARY:Rams vs. New York Giants
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260928T002000Z
+DTEND:20260928T035000Z
+SUMMARY:Rams @ Denver Broncos
+DESCRIPTION:Watch: NBC\nSunday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261004T170000Z
+DTEND:20261004T203000Z
+SUMMARY:Rams @ Philadelphia Eagles
+DESCRIPTION:Watch: FOX
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261013T001500Z
+DTEND:20261013T034500Z
+SUMMARY:Rams vs. Buffalo Bills
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football\nSubject to NFL flex sch
+ eduling: time/network may change.\nFirst week eligible for flex scheduling
+ .
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week06@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261018T200500Z
+DTEND:20261018T233500Z
+SUMMARY:Rams @ Arizona Cardinals
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261025T202500Z
+DTEND:20261025T235500Z
+SUMMARY:Rams vs. Las Vegas Raiders
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261101T200500Z
+DTEND:20261101T233500Z
+SUMMARY:Rams @ Los Angeles Chargers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261108T180000Z
+DTEND:20261108T213000Z
+SUMMARY:Rams vs. Washington Commanders
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261115T210500Z
+DTEND:20261116T003500Z
+SUMMARY:Rams vs. Arizona Cardinals
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261126T010000Z
+DTEND:20261126T043000Z
+SUMMARY:Rams vs. Green Bay Packers
+DESCRIPTION:Watch: Netflix\nWednesday night (Thanksgiving week)
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261204T011500Z
+DTEND:20261204T044500Z
+SUMMARY:Rams vs. Kansas City Chiefs
+DESCRIPTION:Watch: Prime Video\nThursday Night Football
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261213T212500Z
+DTEND:20261214T005500Z
+SUMMARY:Rams vs. San Francisco 49ers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261220T212500Z
+DTEND:20261221T005500Z
+SUMMARY:Rams vs. Dallas Cowboys
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:SoFi Stadium\, Inglewood\, CA
+END:VEVENT
+BEGIN:VEVENT
+UID:rams-2026-regular-week16@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261226T011500Z
+DTEND:20261226T044500Z
+SUMMARY:Rams @ Seattle Seahawks
+DESCRIPTION:Watch: FOX\nChristmas Day
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,152 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chicago Bears 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:bears-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260913T170000Z
+DTEND:20260913T203000Z
+SUMMARY:Bears @ Carolina Panthers
+DESCRIPTION:Watch: FOX
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260920T170000Z
+DTEND:20260920T203000Z
+SUMMARY:Bears vs. Minnesota Vikings
+DESCRIPTION:Watch: FOX
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260929T001500Z
+DTEND:20260929T034500Z
+SUMMARY:Bears vs. Philadelphia Eagles
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261004T170000Z
+DTEND:20261004T203000Z
+SUMMARY:Bears vs. New York Jets
+DESCRIPTION:Watch: FOX
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261011T202500Z
+DTEND:20261011T235500Z
+SUMMARY:Bears @ Green Bay Packers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for flex scheduling.
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week06@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261018T170000Z
+DTEND:20261018T203000Z
+SUMMARY:Bears @ Atlanta Falcons
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261023T001500Z
+DTEND:20261023T034500Z
+SUMMARY:Bears vs. New England Patriots
+DESCRIPTION:Watch: Prime Video\nThursday Night Football
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261103T011500Z
+DTEND:20261103T044500Z
+SUMMARY:Bears @ Seattle Seahawks
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261109T012000Z
+DTEND:20261109T045000Z
+SUMMARY:Bears vs. Tampa Bay Buccaneers
+DESCRIPTION:Watch: NBC\nSunday Night Football
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week11@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261122T180000Z
+DTEND:20261122T213000Z
+SUMMARY:Bears vs. New Orleans Saints
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261126T180000Z
+DTEND:20261126T213000Z
+SUMMARY:Bears @ Detroit Lions
+DESCRIPTION:Watch: CBS\nThanksgiving
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261206T180000Z
+DTEND:20261206T213000Z
+SUMMARY:Bears vs. Jacksonville Jaguars
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261213T180000Z
+DTEND:20261213T213000Z
+SUMMARY:Bears @ Miami Dolphins
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261220T012000Z
+DTEND:20261220T045000Z
+SUMMARY:Bears @ Buffalo Bills
+DESCRIPTION:Watch: CBS\nSaturday game
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week16@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261225T180000Z
+DTEND:20261225T213000Z
+SUMMARY:Bears @ Green Bay Packers
+DESCRIPTION:Watch: Netflix\nChristmas Day
+END:VEVENT
+BEGIN:VEVENT
+UID:bears-2026-regular-week17@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20270103T212500Z
+DTEND:20270104T005500Z
+SUMMARY:Bears vs. Detroit Lions
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Soldier Field\, Chicago\, IL
+END:VEVENT
+END:VCALENDAR

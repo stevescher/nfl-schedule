@@ -1,0 +1,157 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stevescher//nfl-schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Detroit Lions 2026 Schedule
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:lions-2026-regular-week01@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260913T170000Z
+DTEND:20260913T203000Z
+SUMMARY:Lions vs. New Orleans Saints
+DESCRIPTION:Watch: FOX
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week02@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260918T001500Z
+DTEND:20260918T034500Z
+SUMMARY:Lions @ Buffalo Bills
+DESCRIPTION:Watch: Prime Video\nThursday Night Football\, Highmark Stadium 
+ inaugural game (Bills home)
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week03@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20260927T170000Z
+DTEND:20260927T203000Z
+SUMMARY:Lions vs. New York Jets
+DESCRIPTION:Watch: FOX
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week04@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261005T002000Z
+DTEND:20261005T035000Z
+SUMMARY:Lions @ Carolina Panthers
+DESCRIPTION:Watch: NBC\nSunday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week05@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261011T202500Z
+DTEND:20261011T235500Z
+SUMMARY:Lions @ Arizona Cardinals
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.\nFirst week eligible for flex scheduling.
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week07@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261025T202500Z
+DTEND:20261025T235500Z
+SUMMARY:Lions vs. Green Bay Packers
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week08@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261101T170000Z
+DTEND:20261101T203000Z
+SUMMARY:Lions vs. Minnesota Vikings
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week09@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261108T180000Z
+DTEND:20261108T213000Z
+SUMMARY:Lions @ Miami Dolphins
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week10@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261115T143000Z
+DTEND:20261115T180000Z
+SUMMARY:Lions vs. New England Patriots
+DESCRIPTION:Watch: FOX\nInternational Series\, Munich\, Germany (Lions desi
+ gnated home team)
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week11@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261122T180000Z
+DTEND:20261122T213000Z
+SUMMARY:Lions vs. Tampa Bay Buccaneers
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week12@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261126T180000Z
+DTEND:20261126T213000Z
+SUMMARY:Lions vs. Chicago Bears
+DESCRIPTION:Watch: CBS\nThanksgiving
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week13@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261206T180000Z
+DTEND:20261206T213000Z
+SUMMARY:Lions @ Atlanta Falcons
+DESCRIPTION:Watch: CBS\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week14@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261213T180000Z
+DTEND:20261213T213000Z
+SUMMARY:Lions vs. Tennessee Titans
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week15@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261221T012000Z
+DTEND:20261221T045000Z
+SUMMARY:Lions @ Minnesota Vikings
+DESCRIPTION:Watch: NBC\nSunday Night Football
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week16@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20261229T011500Z
+DTEND:20261229T044500Z
+SUMMARY:Lions vs. New York Giants
+DESCRIPTION:Watch: ESPN/ABC\nMonday Night Football
+LOCATION:Ford Field\, Detroit\, MI
+END:VEVENT
+BEGIN:VEVENT
+UID:lions-2026-regular-week17@nfl-schedule.stevescher.com
+DTSTAMP:20260905T010004Z
+DTSTART:20270103T212500Z
+DTEND:20270104T005500Z
+SUMMARY:Lions @ Chicago Bears
+DESCRIPTION:Watch: FOX\nSubject to NFL flex scheduling: time/network may ch
+ ange.
+END:VEVENT
+END:VCALENDAR
