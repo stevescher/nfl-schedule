@@ -12,16 +12,19 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to schedule</a>
+
   <div class="topnav">
     <div class="topnav-inner">
       <a class="back-pill" href="/">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         All Teams
       </a>
       <div class="topnav-search">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="team-search" placeholder="Switch team..." autocomplete="off" />
-        <div class="topnav-results" id="search-results" hidden></div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label class="sr-only" for="team-search">Switch team</label>
+        <input type="text" id="team-search" placeholder="Switch team&hellip;" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" />
+        <div class="topnav-results" id="search-results" role="listbox" aria-live="polite" hidden></div>
       </div>
     </div>
   </div>
@@ -49,15 +52,16 @@
         <a class="btn btn-ghost" id="ics-link" href="#" download>Download .ics</a>
       </div>
       <div class="link-row">
-        <span class="url-box" id="ics-url">loading...</span>
+        <span class="url-box" id="ics-url">loading&hellip;</span>
         <button class="copy-btn" id="copy-btn" type="button">Copy</button>
+        <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
       </div>
       <div class="subscribe-note">Subscribe once. Flex schedule changes, time moves, and network updates sync to your calendar automatically. No re-downloading.</div>
     </div>
   </div>
 
-  <div class="wrap">
-    <div id="status">Loading schedule...</div>
+  <div class="wrap" id="main-content" tabindex="-1">
+    <div id="status">Loading schedule&hellip;</div>
     <div id="sections" hidden></div>
 
     <footer>

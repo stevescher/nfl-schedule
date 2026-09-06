@@ -29,6 +29,18 @@
   }
   a { color: inherit; }
 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   .masthead {
     background: #101319;
     background-image: linear-gradient(160deg, #1a1f2b 0%, #0a0c10 100%);
@@ -92,6 +104,10 @@
     align-items: center;
     gap: 10px;
   }
+  .search-box:focus-within {
+    outline: 2px solid #ff4d5e;
+    outline-offset: 2px;
+  }
   .search-box svg { flex-shrink: 0; opacity: 0.45; }
   .search-box input {
     flex: 1;
@@ -104,6 +120,13 @@
     color: var(--ink);
   }
   .search-box input::placeholder { color: #9aa0ac; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #ff4d5e;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 
   .search-results {
     position: absolute;
@@ -276,9 +299,27 @@
   footer .footer-sep {
     color: var(--line);
   }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    color: var(--ink);
+    padding: 12px 20px;
+    border-radius: 0 0 8px 0;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
 </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#main-content">Skip to all teams</a>
 
   <div class="masthead">
     <div class="masthead-inner">
@@ -289,14 +330,15 @@
   </div>
 
   <div class="search-wrap">
+    <label class="sr-only" for="team-search">Search for a team</label>
     <div class="search-box">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="team-search" placeholder="Search for a team (e.g. Bills, Giants, Jets)" autocomplete="off" />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="team-search" placeholder="Search for a team (e.g. Bills, Giants, Jets)" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" />
     </div>
-    <div class="search-results" id="search-results" hidden></div>
+    <div class="search-results" id="search-results" role="listbox" aria-live="polite" hidden></div>
   </div>
 
-  <div class="wrap">
+  <div class="wrap" id="main-content" tabindex="-1">
     <div class="section-head">
       <h2>All Teams</h2>
       <span class="count" id="available-count"></span>
@@ -406,10 +448,31 @@ async function main() {
     return 0;
   }
 
+  function closeResults() {
+    resultsEl.hidden = true;
+    resultsEl.innerHTML = '';
+    searchInput.setAttribute('aria-expanded', 'false');
+    searchInput.removeAttribute('aria-activedescendant');
+  }
+
+  function setActiveResult(index) {
+    const options = resultsEl.querySelectorAll('[role="option"]');
+    options.forEach((el, i) => {
+      const active = i === index;
+      el.classList.toggle('active', active);
+      el.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    if (index >= 0 && options[index]) {
+      searchInput.setAttribute('aria-activedescendant', options[index].id);
+      options[index].scrollIntoView({ block: 'nearest' });
+    } else {
+      searchInput.removeAttribute('aria-activedescendant');
+    }
+  }
+
   function renderResults(query) {
     if (!query.trim()) {
-      resultsEl.hidden = true;
-      resultsEl.innerHTML = '';
+      closeResults();
       return;
     }
 
@@ -422,13 +485,15 @@ async function main() {
     if (!ranked.length) {
       resultsEl.innerHTML = '<div class="search-empty">No teams found for "' + query + '".</div>';
       resultsEl.hidden = false;
+      searchInput.setAttribute('aria-expanded', 'true');
+      searchInput.removeAttribute('aria-activedescendant');
       return;
     }
 
     resultsEl.innerHTML = ranked
       .map(
-        (r) =>
-          '<a class="search-result" href="/' + r.t.slug + '/" style="--result-color:' + r.t.colors.primary + ';--result-color-deep:' + r.t.colors.primaryDeep + '">' +
+        (r, i) =>
+          '<a class="search-result" id="search-option-' + i + '" role="option" aria-selected="false" href="/' + r.t.slug + '/" style="--result-color:' + r.t.colors.primary + ';--result-color-deep:' + r.t.colors.primaryDeep + '">' +
             '<span class="swatch"></span>' +
             '<span class="info">' +
               '<div class="full-name">' + r.t.fullName + '</div>' +
@@ -438,6 +503,8 @@ async function main() {
       )
       .join('');
     resultsEl.hidden = false;
+    searchInput.setAttribute('aria-expanded', 'true');
+    searchInput.removeAttribute('aria-activedescendant');
   }
 
   searchInput.addEventListener('input', (e) => renderResults(e.target.value));
@@ -446,16 +513,24 @@ async function main() {
   });
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-wrap')) {
-      resultsEl.hidden = true;
+      closeResults();
     }
   });
   searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const first = resultsEl.querySelector('.search-result');
-      if (first) window.location.href = first.getAttribute('href');
-    }
-    if (e.key === 'Escape') {
-      resultsEl.hidden = true;
+    const options = resultsEl.querySelectorAll('[role="option"]');
+    const activeIndex = [...options].findIndex((el) => el.classList.contains('active'));
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (options.length) setActiveResult((activeIndex + 1) % options.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (options.length) setActiveResult(activeIndex === -1 ? options.length - 1 : (activeIndex - 1 + options.length) % options.length);
+    } else if (e.key === 'Enter') {
+      const target = options[activeIndex] || options[0];
+      if (target) window.location.href = target.getAttribute('href');
+    } else if (e.key === 'Escape') {
+      closeResults();
       searchInput.blur();
     }
   });
