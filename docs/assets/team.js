@@ -21,8 +21,37 @@ function contrastRatio(hex1, hex2) {
   return (lighter + 0.05) / (darker + 0.05);
 }
 
+// Used for accent-as-background badges (streaming pill, "next" flag) whose
+// text is small (well under the 18.66px/14px-bold WCAG "large text"
+// threshold), so the required contrast is 4.5:1, not the 3.0:1 that would
+// apply to large/bold text only.
 function readableTextColor(backgroundHex) {
-  return contrastRatio(backgroundHex, '#ffffff') >= 3.0 ? '#ffffff' : '#16181d';
+  return contrastRatio(backgroundHex, '#ffffff') >= 4.5 ? '#ffffff' : '#16181d';
+}
+
+function hexToRgb(hex) {
+  const h = hex.replace('#', '');
+  return [0, 2, 4].map((i) => parseInt(h.substring(i, i + 2), 16));
+}
+
+function rgbToHex([r, g, b]) {
+  return '#' + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
+}
+
+// Used for accent-as-text-on-white (subscribe label, special-game line, loss
+// result), where several teams' accent color (light gold, silver, etc.) is
+// too light to read as text at any size. Darkens toward black just enough to
+// clear 4.5:1 against white, so the team's own accent hue is preserved
+// rather than falling back to a generic neutral color.
+function readableAccentOnWhite(accentHex) {
+  if (contrastRatio(accentHex, '#ffffff') >= 4.5) return accentHex;
+  const [r, g, b] = hexToRgb(accentHex);
+  for (let f = 0.02; f <= 1; f += 0.02) {
+    const darkened = [r * (1 - f), g * (1 - f), b * (1 - f)];
+    const hex = rgbToHex(darkened);
+    if (contrastRatio(hex, '#ffffff') >= 4.5) return hex;
+  }
+  return '#16181d';
 }
 
 function ordinal(n) {
@@ -41,35 +70,48 @@ function dayFmt(dateStr) {
   };
 }
 
-// nth Sunday of a given month/year, at UTC midnight (used to find the DST
-// transition dates). n=1 -> first Sunday, n=2 -> second Sunday, etc.
-function nthSunday(year, month, n) {
-  const d = new Date(Date.UTC(year, month - 1, 1, 7));
-  let sundays = 0;
-  while (true) {
-    if (d.getUTCDay() === 0) {
-      sundays++;
-      if (sundays === n) return d;
-    }
-    d.setUTCDate(d.getUTCDate() + 1);
-  }
+// Returns the America/New_York UTC offset (in minutes, e.g. -240 for EDT)
+// that applies at the given wall-clock instant, by asking the platform's
+// IANA tzdata via Intl rather than hand-rolling DST transition rules.
+// Mirrors the same logic generate-ics.mjs uses to build the .ics feed, so
+// the page and the calendar file always agree on the actual instant a game
+// starts.
+function getEasternOffsetMinutes(y, m, d, hh, mm) {
+  const utcGuess = Date.UTC(y, m - 1, d, hh, mm);
+  const dtf = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York',
+    hour12: false,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+  const parts = dtf.formatToParts(utcGuess).reduce((acc, p) => {
+    acc[p.type] = p.value;
+    return acc;
+  }, {});
+  // Intl's 2-digit hour can render midnight as "24"; normalize to 0.
+  const hour = parts.hour === '24' ? 0 : Number(parts.hour);
+  const asIfUtc = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    hour,
+    Number(parts.minute),
+    Number(parts.second)
+  );
+  return (asIfUtc - utcGuess) / 60000;
 }
 
-// Converts a stored ET wall-clock kickoff (date + "HH:MM") to a real UTC
-// Date, accounting for whether that date falls in EDT or EST. Mirrors the
-// same logic generate-ics.mjs uses to build the .ics feed, so the page and
-// the calendar file always agree on the actual instant a game starts.
+// Converts a stored ET wall-clock kickoff (date + "HH:MM") to a real UTC Date.
 function etToUtcDate(dateStr, timeStr) {
   const [y, m, d] = dateStr.split('-').map(Number);
   const [hh, mm] = timeStr.split(':').map(Number);
 
-  const marchSecondSunday = nthSunday(y, 3, 2);
-  const novFirstSunday = nthSunday(y, 11, 1);
-  const dateAtNoon = new Date(Date.UTC(y, m - 1, d, 12));
-  const isDst = dateAtNoon >= marchSecondSunday && dateAtNoon < novFirstSunday;
-  const offsetHours = isDst ? -4 : -5;
-
-  return new Date(Date.UTC(y, m - 1, d, hh - offsetHours, mm));
+  const offsetMinutes = getEasternOffsetMinutes(y, m, d, hh, mm);
+  return new Date(Date.UTC(y, m - 1, d, 0, hh * 60 + mm - offsetMinutes));
 }
 
 // The visitor's IANA timezone, detected client-side with no permission
@@ -189,7 +231,7 @@ function buildRow(g) {
     '</td>' +
     '<td class="col-watch">' +
       watchLabel +
-      (isLocalBroadcast ? '<span class="local-flag" title="Regional broadcast, not shown nationwide">local</span>' : '') +
+      (isLocalBroadcast ? '<span class="local-flag" title="Regional broadcast, not shown nationwide">local<span class="sr-only"> (regional broadcast, not shown nationwide)</span></span>' : '') +
       (g.streaming ? '<span class="streaming-pill">' + g.streaming + '</span>' : '') +
       (g.flexEligible ? '<span class="flex-flag">flex-eligible</span>' : '') +
     '</td>';
@@ -212,6 +254,14 @@ function buildSection(seasonType, games) {
 
   const table = document.createElement('table');
   table.className = 'schedule-table';
+  table.innerHTML =
+    '<caption class="sr-only">' + SEASON_LABELS[seasonType] + ' schedule</caption>' +
+    '<thead><tr>' +
+      '<th scope="col" class="sr-only">Week</th>' +
+      '<th scope="col" class="sr-only">Date</th>' +
+      '<th scope="col" class="sr-only">Matchup</th>' +
+      '<th scope="col" class="sr-only">Watch</th>' +
+    '</tr></thead>';
   const tbody = document.createElement('tbody');
   games.forEach((g) => tbody.appendChild(buildRow(g)));
   table.appendChild(tbody);
@@ -332,6 +382,7 @@ async function initTeamPage(slug) {
   let allTeams = [];
   try {
     const idxRes = await fetch('/data/teams.json', { cache: 'no-store' });
+    if (!idxRes.ok) throw new Error('HTTP ' + idxRes.status);
     const idx = await idxRes.json();
     allTeams = idx.teams;
     teamMeta = idx.teams.find((t) => t.slug === slug);
@@ -351,6 +402,7 @@ async function initTeamPage(slug) {
   document.documentElement.style.setProperty('--team-primary-deep', teamMeta.colors.primaryDeep);
   document.documentElement.style.setProperty('--team-accent', teamMeta.colors.accent);
   document.documentElement.style.setProperty('--team-accent-text', readableTextColor(teamMeta.colors.accent));
+  document.documentElement.style.setProperty('--team-accent-on-white', readableAccentOnWhite(teamMeta.colors.accent));
   document.title = teamMeta.fullName + ' Schedule';
 
   const cityEl = document.getElementById('team-city');
@@ -372,7 +424,9 @@ async function initTeamPage(slug) {
             ? record.wins + '-' + record.losses + '-' + record.ties
             : record.wins + '-' + record.losses;
           const rankStr = ordinal(record.divisionRank) + ' in ' + record.division;
-          recordBadge.innerHTML = '<b>' + recordStr + '</b><span>' + rankStr + '</span>';
+          recordBadge.innerHTML =
+            '<b>' + recordStr + '</b><span>' + rankStr + '</span>' +
+            '<span class="record-source">via ESPN</span>';
           recordBadge.hidden = false;
         }
       }
@@ -445,6 +499,7 @@ async function initTeamPage(slug) {
   let data;
   try {
     const res = await fetch('/data/teams/' + slug + '.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     data = await res.json();
   } catch (e) {
     status.textContent = 'Could not load schedule data. Try refreshing.';

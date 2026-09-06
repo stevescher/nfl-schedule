@@ -3,6 +3,7 @@
   --team-primary-deep: #001d54;
   --team-accent: #c60c30;
   --team-accent-text: #ffffff;
+  --team-accent-on-white: #c60c30;
   --bg: #eef0f4;
   --paper: #ffffff;
   --ink: #1b1e27;
@@ -218,6 +219,7 @@ input:focus-visible {
 }
 .record-badge[hidden] { display: none; }
 .record-badge b { color: #fff; font-size: 16px; font-weight: 800; }
+.record-badge .record-source { color: #8b97b8; font-size: 11px; font-weight: 600; }
 .masthead p.sub {
   max-width: 46ch;
   color: #c9d3ec;
@@ -255,7 +257,7 @@ input:focus-visible {
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--team-accent);
+  color: var(--team-accent-on-white);
   margin-bottom: 10px;
 }
 .subscribe-actions {
@@ -407,7 +409,7 @@ input:focus-visible {
 }
 .ha-flag.home { background: var(--team-primary); color: #fff; }
 .ha-flag.away { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); }
-.special-line { font-size: 12px; color: var(--team-accent); font-weight: 700; margin-top: 2px; }
+.special-line { font-size: 12px; color: var(--team-accent-on-white); font-weight: 700; margin-top: 2px; }
 .time-line { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
 
 .col-watch {
@@ -461,7 +463,7 @@ input:focus-visible {
 
 .result-line { font-size: 12px; font-weight: 700; margin-top: 2px; }
 .result-line.win { color: #0a7a3d; }
-.result-line.loss { color: var(--team-accent); }
+.result-line.loss { color: var(--team-accent-on-white); }
 .game-row.past-row { opacity: 0.72; }
 
 .section-block { margin-bottom: 40px; }
