@@ -14,8 +14,8 @@
 
   <a class="skip-link" href="#main-content">Skip to schedule</a>
 
-  <div class="topnav">
-    <div class="topnav-inner">
+  <header class="topnav">
+    <nav class="topnav-inner" aria-label="Site">
       <a class="back-pill" href="/">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         All Teams
@@ -26,8 +26,8 @@
         <input type="text" id="team-search" placeholder="Switch team&hellip;" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" />
         <div class="topnav-results" id="search-results" role="listbox" aria-live="polite" hidden></div>
       </div>
-    </div>
-  </div>
+    </nav>
+  </header>
 
   <div class="masthead">
     <div class="masthead-inner">
@@ -60,7 +60,7 @@
     </div>
   </div>
 
-  <div class="wrap" id="main-content" tabindex="-1">
+  <main class="wrap" id="main-content" tabindex="-1">
     <div id="status">Loading schedule&hellip;</div>
     <div id="sections" hidden></div>
 
@@ -77,7 +77,7 @@
         <span>© <span id="footer-year">2026</span> NFL Schedules</span>
       </div>
     </footer>
-  </div>
+  </main>
 
 <script src="/assets/team.js"></script>
 <script>initTeamPage('jets');</script>

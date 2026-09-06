@@ -28,40 +28,52 @@ function pad(n) {
   return String(n).padStart(2, "0");
 }
 
+// Returns the America/New_York UTC offset (in minutes, e.g. -240 for EDT)
+// that applies at the given wall-clock instant, by asking the platform's
+// IANA tzdata via Intl rather than hand-rolling DST transition rules.
+function getEasternOffsetMinutes(y, m, d, hh, mm) {
+  const utcGuess = Date.UTC(y, m - 1, d, hh, mm);
+  const dtf = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  const parts = dtf.formatToParts(utcGuess).reduce((acc, p) => {
+    acc[p.type] = p.value;
+    return acc;
+  }, {});
+  // Intl's 2-digit hour can render midnight as "24"; normalize to 0.
+  const hour = parts.hour === "24" ? 0 : Number(parts.hour);
+  const asIfUtc = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    hour,
+    Number(parts.minute),
+    Number(parts.second)
+  );
+  return (asIfUtc - utcGuess) / 60000;
+}
+
 // Format a local wall-clock date/time (America/New_York) as a UTC ICS
 // timestamp, accounting for whether that date falls in EDT or EST.
 function toUtcIcsTimestamp(dateStr, timeStr, addHours = 0) {
   const [y, m, d] = dateStr.split("-").map(Number);
   const [hh, mm] = timeStr.split(":").map(Number);
 
-  // US Eastern DST: second Sunday in March 2am -> first Sunday in November 2am.
-  const isDst = (() => {
-    const date = new Date(Date.UTC(y, m - 1, d));
-    const marchSecondSunday = nthSunday(y, 3, 2);
-    const novFirstSunday = nthSunday(y, 11, 1);
-    return date >= marchSecondSunday && date < novFirstSunday;
-  })();
-  const offsetHours = isDst ? -4 : -5;
-
   const localMinutes = hh * 60 + mm + addHours * 60;
-  const utcDate = new Date(Date.UTC(y, m - 1, d, 0, localMinutes - offsetHours * 60));
+  const offsetMinutes = getEasternOffsetMinutes(y, m, d, hh, mm);
+  const utcDate = new Date(Date.UTC(y, m - 1, d, 0, localMinutes - offsetMinutes));
 
   return (
     `${utcDate.getUTCFullYear()}${pad(utcDate.getUTCMonth() + 1)}${pad(utcDate.getUTCDate())}T` +
     `${pad(utcDate.getUTCHours())}${pad(utcDate.getUTCMinutes())}00Z`
   );
-}
-
-function nthSunday(year, month, n) {
-  const d = new Date(Date.UTC(year, month - 1, 1, 7)); // 7 = safely past midnight in any offset
-  let sundays = 0;
-  while (true) {
-    if (d.getUTCDay() === 0) {
-      sundays++;
-      if (sundays === n) return d;
-    }
-    d.setUTCDate(d.getUTCDate() + 1);
-  }
 }
 
 // RFC 5545 line folding: lines must not exceed 75 octets; continuations
@@ -92,7 +104,7 @@ function escapeText(str) {
     .replace(/\\/g, "\\\\")
     .replace(/;/g, "\\;")
     .replace(/,/g, "\\,")
-    .replace(/\n/g, "\\n");
+    .replace(/\r\n|\r|\n/g, "\\n");
 }
 
 function whereToWatch(game) {
@@ -113,7 +125,17 @@ function buildNotes(game) {
   return lines.map(escapeText).join("\\n");
 }
 
-function buildEvent(game, dtstamp, team) {
+// Base UID identity is team/season/seasonType/week: stable across
+// reschedules (a flex move that changes date/time must update the existing
+// calendar event, not create a duplicate). If two games in the same team's
+// data ever land on the same week/seasonType (a data error, or a genuine
+// rescheduled-into-another-week collision), disambiguate with an index so
+// events don't silently overwrite each other in subscribers' calendars.
+function uidBase(game, team) {
+  return `${team.slug}-${team.season}-${game.seasonType}-week${pad(game.week)}`;
+}
+
+function buildEvent(game, dtstamp, team, uidSuffix) {
   if (!game.date || !game.kickoffLocal) return null; // bye week / TBD week
 
   const opponent = game.opponent;
@@ -124,7 +146,7 @@ function buildEvent(game, dtstamp, team) {
 
   const dtstart = toUtcIcsTimestamp(game.date, game.kickoffLocal, 0);
   const dtend = toUtcIcsTimestamp(game.date, game.kickoffLocal, GAME_DURATION_HOURS);
-  const uid = `${team.slug}-${team.season}-${game.seasonType}-week${pad(game.week)}@nfl-schedule.stevescher.com`;
+  const uid = `${uidBase(game, team)}${uidSuffix ? `-${uidSuffix}` : ""}@nfl-schedule.stevescher.com`;
 
   const location = game.homeAway === "home" ? team.stadium || "" : "";
 
@@ -146,7 +168,23 @@ function buildEvent(game, dtstamp, team) {
 
 function buildTeamIcs(teamData, teamMeta, dtstamp) {
   const team = { ...teamData, slug: teamMeta.slug, name: teamMeta.name, stadium: teamMeta.stadium };
-  const events = teamData.games.map((g) => buildEvent(g, dtstamp, team)).filter(Boolean);
+
+  // Count games sharing a UID base (same week/seasonType) so a genuine
+  // collision gets a stable disambiguating suffix (occurrence index). The
+  // first occurrence keeps the plain, stable UID unsuffixed (matching what
+  // may already be published/subscribed to); only the 2nd+ occurrence gets
+  // "-2", "-3", etc., so an already-synced event is never renamed out from
+  // under an existing subscriber.
+  const baseSeen = new Map();
+  const events = teamData.games
+    .map((g) => {
+      const base = uidBase(g, team);
+      const occurrence = baseSeen.get(base) || 0;
+      baseSeen.set(base, occurrence + 1);
+      const suffix = occurrence > 0 ? String(occurrence + 1) : null;
+      return buildEvent(g, dtstamp, team, suffix);
+    })
+    .filter(Boolean);
 
   const ics = [
     "BEGIN:VCALENDAR",
@@ -192,29 +230,35 @@ function main() {
 
   const teamFiles = readdirSync(TEAMS_DIR).filter((f) => f.endsWith(".json"));
   const foundSlugs = new Set();
+  let hadErrors = false;
 
   for (const file of teamFiles) {
-    const teamData = JSON.parse(readFileSync(join(TEAMS_DIR, file), "utf8"));
-    const slug = teamData.slug || file.replace(/\.json$/, "");
-    const teamMeta = teamsIndex.teams.find((t) => t.slug === slug);
+    try {
+      const teamData = JSON.parse(readFileSync(join(TEAMS_DIR, file), "utf8"));
+      const slug = teamData.slug || file.replace(/\.json$/, "");
+      const teamMeta = teamsIndex.teams.find((t) => t.slug === slug);
 
-    if (!teamMeta) {
-      console.warn(`Warning: no entry in data/teams.json for slug "${slug}" (from ${file}); skipping.`);
-      continue;
-    }
-    foundSlugs.add(slug);
+      if (!teamMeta) {
+        console.warn(`Warning: no entry in data/teams.json for slug "${slug}" (from ${file}); skipping.`);
+        continue;
+      }
+      foundSlugs.add(slug);
 
-    const { ics, eventCount } = buildTeamIcs(teamData, teamMeta, dtstamp);
-    const icsPath = join(OUT_DIR, `${slug}.ics`);
-    writeFileSync(icsPath, ics + "\r\n", "utf8");
-    console.log(`Wrote ${eventCount} events to ${icsPath}`);
+      const { ics, eventCount } = buildTeamIcs(teamData, teamMeta, dtstamp);
+      const icsPath = join(OUT_DIR, `${slug}.ics`);
+      writeFileSync(icsPath, ics + "\r\n", "utf8");
+      console.log(`Wrote ${eventCount} events to ${icsPath}`);
 
-    copyFileSync(join(TEAMS_DIR, file), join(publishedTeamsDataDir, `${slug}.json`));
+      copyFileSync(join(TEAMS_DIR, file), join(publishedTeamsDataDir, `${slug}.json`));
 
-    if (pageTemplate) {
-      const pageDir = join(OUT_DIR, slug);
-      mkdirSync(pageDir, { recursive: true });
-      writeFileSync(join(pageDir, "index.html"), buildPageShell(pageTemplate, slug), "utf8");
+      if (pageTemplate) {
+        const pageDir = join(OUT_DIR, slug);
+        mkdirSync(pageDir, { recursive: true });
+        writeFileSync(join(pageDir, "index.html"), buildPageShell(pageTemplate, slug), "utf8");
+      }
+    } catch (err) {
+      hadErrors = true;
+      console.error(`Error processing ${file}: ${err.message}; skipping this team.`);
     }
   }
 
@@ -225,6 +269,11 @@ function main() {
         .map((t) => t.slug)
         .join(", ")}`
     );
+  }
+
+  if (hadErrors) {
+    console.error("Build completed with errors (see above); some team files were skipped.");
+    process.exitCode = 1;
   }
 }
 

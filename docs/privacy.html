@@ -28,6 +28,36 @@
   }
   a { color: inherit; }
 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    color: var(--ink);
+    padding: 12px 20px;
+    border-radius: 0 0 8px 0;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .skip-link:focus { left: 0; }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid #ff4d5e;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
   header {
     background: var(--ink);
     padding: 16px 20px;
@@ -92,19 +122,34 @@
     font-size: 12px;
     color: var(--ink-soft);
     margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
   }
-  footer a { color: var(--ink-soft); text-decoration: underline; }
-  footer a:hover { color: var(--ink); }
+  footer .footer-links {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 8px;
+  }
+  footer .footer-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.15s ease; }
+  footer .footer-links a:hover { color: var(--ink); text-decoration: underline; }
+  footer .footer-sep { color: var(--line); }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header>
-  <span class="brand">NFL Schedules</span>
-  <a class="back" href="/">&larr; Back to all teams</a>
+  <nav aria-label="Site" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+    <span class="brand">NFL Schedules</span>
+    <a class="back" href="/">&larr; Back to all teams</a>
+  </nav>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <div class="card">
     <h1>Privacy Policy</h1>
     <p class="updated">Last updated: September 6, 2026</p>
@@ -141,6 +186,11 @@
 
     <div class="divider"></div>
 
+    <h2>Standings Data</h2>
+    <p>Team win-loss records and division rank shown on team pages are sourced from ESPN's public standings API. This data is fetched by the site's build process, not from your browser, so no information about you is sent to ESPN when you view a page.</p>
+
+    <div class="divider"></div>
+
     <h2>Third-Party Links</h2>
     <p>The &ldquo;Buy me a coffee&rdquo; link goes to <a class="inline" href="https://buymeacoffee.com" target="_blank" rel="noopener noreferrer">buymeacoffee.com</a>, which has its own terms and privacy policy. No data is shared with Buy Me a Coffee unless you choose to visit that site. The &ldquo;Google Calendar&rdquo; button opens Google's own calendar-add flow on google.com, governed by Google's privacy policy.</p>
 
@@ -153,12 +203,30 @@
 
     <h2>Changes to This Policy</h2>
     <p>If this privacy policy changes materially, the &ldquo;Last updated&rdquo; date above will be updated. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+
+    <div class="divider"></div>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy, or a request regarding your data, can be sent via the <a class="inline" href="https://github.com/stevescher/nfl-schedule/issues" target="_blank" rel="noopener noreferrer">GitHub repository's issue tracker</a>.</p>
   </div>
+
+  <footer>
+    Not an official NFL product.
+    <div class="footer-links">
+      <a href="https://buymeacoffee.com/stevescher" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+      <span class="footer-sep">·</span>
+      <a href="/">Home</a>
+      <span class="footer-sep">·</span>
+      <a href="/terms.html">Terms</a>
+      <span class="footer-sep">·</span>
+      <span>© <span id="footer-year">2026</span> NFL Schedules</span>
+    </div>
+  </footer>
 </main>
 
-<footer>
-  <p><a href="/">NFL Schedules</a> &nbsp;&middot;&nbsp; <a href="/terms.html">Terms of Use</a> &nbsp;&middot;&nbsp; Not affiliated with the NFL</p>
-</footer>
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
