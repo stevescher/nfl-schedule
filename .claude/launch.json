@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nfl-schedule",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "docs", "-l", "5566"],
+      "port": 5566
+    }
+  ]
+}
