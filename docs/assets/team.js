@@ -292,6 +292,9 @@ async function initTeamPage(slug) {
   const status = document.getElementById('status');
   const sections = document.getElementById('sections');
 
+  const footerYearEl = document.getElementById('footer-year');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
   let teamMeta;
   let allTeams = [];
   try {

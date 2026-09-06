@@ -452,16 +452,25 @@ footer {
   color: var(--ink-soft);
 }
 
-footer .coffee-link {
-  display: inline-flex;
+footer .footer-links {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 5px;
-  margin-top: 10px;
+  gap: 6px 8px;
+}
+
+footer .footer-links a {
   color: var(--ink-soft);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
-footer .coffee-link:hover {
+footer .footer-links a:hover {
   color: var(--ink);
+  text-decoration: underline;
+}
+
+footer .footer-sep {
+  color: var(--line);
 }
