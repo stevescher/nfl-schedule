@@ -23,6 +23,42 @@ body {
 }
 a { color: inherit; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  color: var(--ink);
+  padding: 12px 20px;
+  border-radius: 0 0 8px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--team-accent, #ff4d5e);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* ---------- Top nav (team pages) ---------- */
 .topnav {
   background: #0c0e13;
@@ -64,6 +100,10 @@ a { color: inherit; }
   flex: 1;
   max-width: 280px;
 }
+.topnav-search:focus-within {
+  outline: 2px solid var(--team-accent, #ff4d5e);
+  outline-offset: 2px;
+}
 .topnav-search svg { color: rgba(255,255,255,0.5); flex-shrink: 0; }
 .topnav-search input {
   flex: 1;
@@ -101,7 +141,8 @@ a { color: inherit; }
   font-size: 13.5px;
 }
 .topnav-results .search-result:last-child { border-bottom: none; }
-.topnav-results .search-result:hover { background: var(--bg); }
+.topnav-results .search-result:hover,
+.topnav-results .search-result.active { background: var(--bg); }
 .topnav-results .search-result .swatch {
   width: 8px;
   height: 22px;

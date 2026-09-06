@@ -245,28 +245,53 @@ function initSwitchSearch(teams, currentSlug) {
 
   const otherTeams = teams.filter((t) => t.slug !== currentSlug);
 
+  function close() {
+    resultsEl.hidden = true;
+    resultsEl.innerHTML = '';
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+  }
+
+  function setActive(index) {
+    const options = resultsEl.querySelectorAll('[role="option"]');
+    options.forEach((el, i) => {
+      const active = i === index;
+      el.classList.toggle('active', active);
+      el.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    if (index >= 0 && options[index]) {
+      input.setAttribute('aria-activedescendant', options[index].id);
+      options[index].scrollIntoView({ block: 'nearest' });
+    } else {
+      input.removeAttribute('aria-activedescendant');
+    }
+  }
+
   function render(query) {
     if (!query.trim()) {
-      resultsEl.hidden = true;
-      resultsEl.innerHTML = '';
+      close();
       return;
     }
     const matches = matchTeams(otherTeams, query).slice(0, 6);
     if (!matches.length) {
       resultsEl.innerHTML = '<div class="search-empty">No teams found.</div>';
       resultsEl.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      input.removeAttribute('aria-activedescendant');
       return;
     }
     resultsEl.innerHTML = matches
       .map(
-        (t) =>
-          '<a class="search-result" href="/' + t.slug + '/">' +
+        (t, i) =>
+          '<a class="search-result" id="switch-option-' + i + '" role="option" aria-selected="false" href="/' + t.slug + '/">' +
             '<span class="swatch" style="background:' + t.colors.primary + '"></span>' +
             '<span class="full-name">' + t.fullName + '</span>' +
           '</a>'
       )
       .join('');
     resultsEl.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+    input.removeAttribute('aria-activedescendant');
   }
 
   input.addEventListener('input', (e) => render(e.target.value));
@@ -274,15 +299,23 @@ function initSwitchSearch(teams, currentSlug) {
     if (e.target.value.trim()) render(e.target.value);
   });
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.topnav-search')) resultsEl.hidden = true;
+    if (!e.target.closest('.topnav-search')) close();
   });
   input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const first = resultsEl.querySelector('.search-result');
-      if (first) window.location.href = first.getAttribute('href');
-    }
-    if (e.key === 'Escape') {
-      resultsEl.hidden = true;
+    const options = resultsEl.querySelectorAll('[role="option"]');
+    const activeIndex = [...options].findIndex((el) => el.classList.contains('active'));
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (options.length) setActive((activeIndex + 1) % options.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (options.length) setActive(activeIndex === -1 ? options.length - 1 : (activeIndex - 1 + options.length) % options.length);
+    } else if (e.key === 'Enter') {
+      const target = options[activeIndex] || options[0];
+      if (target) window.location.href = target.getAttribute('href');
+    } else if (e.key === 'Escape') {
+      close();
       input.blur();
     }
   });
@@ -377,11 +410,12 @@ async function initTeamPage(slug) {
     } catch (e) {
       ok = false;
     }
-    selection.removeAllRanges();
+    if (ok) selection.removeAllRanges();
     return ok;
   }
 
   const copyBtn = document.getElementById('copy-btn');
+  const copyStatus = document.getElementById('copy-status');
   if (copyBtn) {
     copyBtn.addEventListener('click', async () => {
       const original = copyBtn.textContent;
@@ -398,8 +432,13 @@ async function initTeamPage(slug) {
 
       if (!ok) ok = fallbackCopy(icsUrl);
 
-      copyBtn.textContent = ok ? 'Copied' : 'Select and copy';
-      setTimeout(() => { copyBtn.textContent = original; }, 1600);
+      const message = ok ? 'Copied' : 'Select and copy';
+      copyBtn.textContent = message;
+      if (copyStatus) copyStatus.textContent = ok ? 'Calendar link copied to clipboard' : 'Could not copy automatically, link is selected for manual copy';
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        if (copyStatus) copyStatus.textContent = '';
+      }, 1600);
     });
   }
 
