@@ -451,3 +451,17 @@ footer {
   font-size: 12px;
   color: var(--ink-soft);
 }
+
+footer .coffee-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+footer .coffee-link:hover {
+  color: var(--ink);
+}
