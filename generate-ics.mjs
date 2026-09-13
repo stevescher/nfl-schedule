@@ -148,7 +148,7 @@ function buildEvent(game, dtstamp, team, uidSuffix) {
   const dtend = toUtcIcsTimestamp(game.date, game.kickoffLocal, GAME_DURATION_HOURS);
   const uid = `${uidBase(game, team)}${uidSuffix ? `-${uidSuffix}` : ""}@nfl-schedule.stevescher.com`;
 
-  const location = game.homeAway === "home" ? team.stadium || "" : "";
+  const location = whereToWatch(game);
 
   return [
     "BEGIN:VEVENT",
