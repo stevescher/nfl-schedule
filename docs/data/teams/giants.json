@@ -62,7 +62,8 @@
       "streaming": null,
       "isPrimetimeOrSpecial": "Sunday Night Football",
       "flexEligible": false,
-      "notes": null
+      "notes": null,
+      "result": "Giants won 28-20"
     },
     {
       "seasonType": "regular",
@@ -76,7 +77,8 @@
       "streaming": null,
       "isPrimetimeOrSpecial": "Monday Night Football",
       "flexEligible": false,
-      "notes": null
+      "notes": null,
+      "result": "Giants lost 6-28"
     },
     {
       "seasonType": "regular",
