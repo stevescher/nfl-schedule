@@ -62,7 +62,8 @@
       "streaming": null,
       "isPrimetimeOrSpecial": null,
       "flexEligible": false,
-      "notes": null
+      "notes": null,
+      "result": "Bills won 36-31"
     },
     {
       "seasonType": "regular",
@@ -76,7 +77,8 @@
       "streaming": "Prime Video",
       "isPrimetimeOrSpecial": "Thursday Night Football, Highmark Stadium inaugural game",
       "flexEligible": false,
-      "notes": "Streaming exclusive on Prime Video, no over-the-air simulcast confirmed."
+      "notes": "Streaming exclusive on Prime Video, no over-the-air simulcast confirmed.",
+      "result": "Bills won 41-31"
     },
     {
       "seasonType": "regular",
