@@ -78,6 +78,7 @@ async function main() {
   const out = {
     lastFetched: new Date().toISOString().slice(0, 10),
     source: "ESPN standings API",
+    sourceLabel: "ESPN",
     teams: standings,
   };
 
