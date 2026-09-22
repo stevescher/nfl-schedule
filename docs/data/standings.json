@@ -1,262 +1,262 @@
 {
-  "lastFetched": "2026-09-05",
-  "source": "ESPN standings API",
+  "lastFetched": "2026-09-22",
+  "source": "Manually compiled from individually verified final scores (ESPN game pages, primarily) for Weeks 1-2 of the 2026 season, cross-checked against data/teams/*.json schedules. The ESPN standings API (site.api.espn.com) was blocked by this environment's network egress policy at the time of this update, so automated fetch-standings.mjs could not run; division ranks are win-pct only (real NFL tiebreakers like net points and head-to-head not applied) and should be treated as approximate for teams with identical records.",
   "teams": {
     "bills": {
-      "wins": 0,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC East",
-      "streak": "-"
+      "streak": "W2"
+    },
+    "patriots": {
+      "wins": 1,
+      "losses": 1,
+      "ties": 0,
+      "divisionRank": 2,
+      "division": "AFC East",
+      "streak": "W1"
+    },
+    "jets": {
+      "wins": 1,
+      "losses": 1,
+      "ties": 0,
+      "divisionRank": 3,
+      "division": "AFC East",
+      "streak": "L1"
     },
     "dolphins": {
       "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "divisionRank": 2,
-      "division": "AFC East",
-      "streak": "-"
-    },
-    "patriots": {
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "divisionRank": 3,
-      "division": "AFC East",
-      "streak": "-"
-    },
-    "jets": {
-      "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC East",
-      "streak": "-"
+      "streak": "L2"
     },
     "bengals": {
-      "wins": 0,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC North",
-      "streak": "-"
+      "streak": "W2"
     },
-    "browns": {
-      "wins": 0,
-      "losses": 0,
+    "ravens": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC North",
-      "streak": "-"
+      "streak": "L1"
     },
-    "steelers": {
-      "wins": 0,
-      "losses": 0,
+    "browns": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC North",
-      "streak": "-"
+      "streak": "W1"
     },
-    "ravens": {
-      "wins": 0,
-      "losses": 0,
+    "steelers": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC North",
-      "streak": "-"
+      "streak": "L1"
     },
-    "titans": {
-      "wins": 0,
-      "losses": 0,
+    "jaguars": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC South",
-      "streak": "-"
-    },
-    "colts": {
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "divisionRank": 2,
-      "division": "AFC South",
-      "streak": "-"
-    },
-    "jaguars": {
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "divisionRank": 3,
-      "division": "AFC South",
-      "streak": "-"
+      "streak": "L1"
     },
     "texans": {
       "wins": 0,
-      "losses": 0,
+      "losses": 2,
+      "ties": 0,
+      "divisionRank": 2,
+      "division": "AFC South",
+      "streak": "L2"
+    },
+    "colts": {
+      "wins": 0,
+      "losses": 2,
+      "ties": 0,
+      "divisionRank": 3,
+      "division": "AFC South",
+      "streak": "L2"
+    },
+    "titans": {
+      "wins": 0,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC South",
-      "streak": "-"
+      "streak": "L2"
     },
-    "broncos": {
-      "wins": 0,
+    "chiefs": {
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC West",
-      "streak": "-"
+      "streak": "W2"
     },
-    "chiefs": {
-      "wins": 0,
+    "raiders": {
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC West",
-      "streak": "-"
+      "streak": "W2"
     },
-    "raiders": {
-      "wins": 0,
-      "losses": 0,
+    "broncos": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC West",
-      "streak": "-"
+      "streak": "W1"
     },
     "chargers": {
       "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC West",
-      "streak": "-"
+      "streak": "L2"
     },
-    "cowboys": {
-      "wins": 0,
+    "eagles": {
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC East",
-      "streak": "-"
+      "streak": "W2"
     },
-    "giants": {
-      "wins": 0,
-      "losses": 0,
+    "cowboys": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC East",
-      "streak": "-"
+      "streak": "W1"
     },
-    "eagles": {
-      "wins": 0,
-      "losses": 0,
+    "giants": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC East",
-      "streak": "-"
+      "streak": "L1"
     },
     "commanders": {
       "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC East",
-      "streak": "-"
+      "streak": "L2"
     },
-    "bears": {
-      "wins": 0,
+    "vikings": {
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC North",
-      "streak": "-"
+      "streak": "W2"
     },
-    "lions": {
-      "wins": 0,
-      "losses": 0,
+    "bears": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC North",
-      "streak": "-"
+      "streak": "L1"
     },
-    "packers": {
-      "wins": 0,
-      "losses": 0,
+    "lions": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "-"
+      "streak": "L1"
     },
-    "vikings": {
-      "wins": 0,
-      "losses": 0,
+    "packers": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC North",
-      "streak": "-"
+      "streak": "W1"
+    },
+    "panthers": {
+      "wins": 1,
+      "losses": 1,
+      "ties": 0,
+      "divisionRank": 1,
+      "division": "NFC South",
+      "streak": "W1"
+    },
+    "saints": {
+      "wins": 1,
+      "losses": 1,
+      "ties": 0,
+      "divisionRank": 2,
+      "division": "NFC South",
+      "streak": "W1"
     },
     "falcons": {
       "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "ties": 0,
-      "divisionRank": 1,
+      "divisionRank": 3,
       "division": "NFC South",
-      "streak": "-"
-    },
-    "saints": {
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "divisionRank": 2,
-      "division": "NFC South",
-      "streak": "-"
+      "streak": "L2"
     },
     "buccaneers": {
       "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "divisionRank": 3,
-      "division": "NFC South",
-      "streak": "-"
-    },
-    "panthers": {
-      "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC South",
-      "streak": "-"
+      "streak": "L2"
     },
-    "rams": {
-      "wins": 0,
+    "49ers": {
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC West",
-      "streak": "-"
+      "streak": "W2"
     },
-    "cardinals": {
-      "wins": 0,
+    "seahawks": {
+      "wins": 2,
       "losses": 0,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC West",
-      "streak": "-"
+      "streak": "W2"
     },
-    "49ers": {
-      "wins": 0,
-      "losses": 0,
+    "cardinals": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC West",
-      "streak": "-"
+      "streak": "L1"
     },
-    "seahawks": {
-      "wins": 0,
-      "losses": 0,
+    "rams": {
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC West",
-      "streak": "-"
+      "streak": "W1"
     }
   }
 }
