@@ -1,6 +1,7 @@
 {
   "lastFetched": "2026-09-22",
   "source": "Manually compiled from individually verified final scores (ESPN game pages, primarily) for Weeks 1-2 of the 2026 season, cross-checked against data/teams/*.json schedules. The ESPN standings API (site.api.espn.com) was blocked by this environment's network egress policy at the time of this update, so automated fetch-standings.mjs could not run; division ranks are win-pct only (real NFL tiebreakers like net points and head-to-head not applied) and should be treated as approximate for teams with identical records.",
+  "sourceLabel": "Manually verified",
   "teams": {
     "bills": {
       "wins": 2,
