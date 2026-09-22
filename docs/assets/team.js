@@ -424,9 +424,10 @@ async function initTeamPage(slug) {
             ? record.wins + '-' + record.losses + '-' + record.ties
             : record.wins + '-' + record.losses;
           const rankStr = ordinal(record.divisionRank) + ' in ' + record.division;
+          const sourceLabel = standingsData.sourceLabel || 'ESPN';
           recordBadge.innerHTML =
             '<b>' + recordStr + '</b><span>' + rankStr + '</span>' +
-            '<span class="record-source">via ESPN</span>';
+            '<span class="record-source">via ' + sourceLabel + '</span>';
           recordBadge.hidden = false;
         }
       }
