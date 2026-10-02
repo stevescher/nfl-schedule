@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-09-29",
+  "lastFetched": "2026-10-02",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -35,13 +35,13 @@
       "division": "AFC East",
       "streak": "L3"
     },
-    "steelers": {
-      "wins": 2,
+    "browns": {
+      "wins": 3,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC North",
-      "streak": "W1"
+      "streak": "W3"
     },
     "ravens": {
       "wins": 2,
@@ -51,17 +51,17 @@
       "division": "AFC North",
       "streak": "W1"
     },
-    "browns": {
+    "bengals": {
       "wins": 2,
       "losses": 1,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC North",
-      "streak": "W2"
+      "streak": "L1"
     },
-    "bengals": {
+    "steelers": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC North",

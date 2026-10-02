@@ -1,0 +1,44 @@
+name: Update standings
+
+on:
+  schedule:
+    # Every 15 minutes, year-round. Cheap no-op when nothing changed;
+    # keeps the live site's records/division ranks close to real-time
+    # during and right after games without any manual step.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-standings
+  cancel-in-progress: false
+
+jobs:
+  update-standings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch latest standings
+        run: node fetch-standings.mjs
+
+      - name: Regenerate published site data
+        run: node generate-ics.mjs
+
+      - name: Commit and push if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "No standings changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Auto-update standings $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
