@@ -28,8 +28,12 @@ jobs:
       - name: Fetch latest standings
         run: node fetch-standings.mjs
 
-      - name: Regenerate published site data
-        run: node generate-ics.mjs
+      - name: Publish standings.json
+        # Just the one file, not the full generate-ics.mjs: the .ics feeds
+        # and published team JSON don't depend on standings, so running the
+        # full generator here would touch all 32 calendars' DTSTAMP on every
+        # standings tick for no reason.
+        run: cp data/standings.json docs/data/standings.json
 
       - name: Commit and push if anything changed
         run: |
