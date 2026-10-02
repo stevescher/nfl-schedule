@@ -2,7 +2,7 @@
   "slug": "steelers",
   "season": 2026,
   "team": "Pittsburgh Steelers",
-  "lastUpdated": "2026-09-04",
+  "lastUpdated": "2026-10-02",
   "sourceNotes": "Compiled from nfl.com, ESPN.com, and Wikipedia (2026-09-04). Week 7 is an International Series game in Paris, France (Stade de France; Steelers designated home team). Week 12 is a Black Friday game on Prime Video. Week 16 date/time/network are not yet finalized (flex candidate). Week 18 date/time/network are not yet finalized.",
   "games": [
     { "seasonType": "preseason", "week": 1, "date": "2026-08-13", "kickoffLocal": null, "timezone": "America/New_York", "opponent": "Green Bay Packers", "homeAway": "home", "network": null, "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "result": "Steelers won 28-9", "notes": null },
@@ -11,7 +11,7 @@
     { "seasonType": "regular", "week": 1, "date": "2026-09-13", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Atlanta Falcons", "homeAway": "home", "network": "FOX", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "notes": null, "result": "Steelers won 20-13" },
     { "seasonType": "regular", "week": 2, "date": "2026-09-20", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "New England Patriots", "homeAway": "away", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "notes": null, "result": "Steelers lost 3-20" },
     { "seasonType": "regular", "week": 3, "date": "2026-09-27", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Cincinnati Bengals", "homeAway": "home", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "notes": null, "result": "Steelers won 30-27" },
-    { "seasonType": "regular", "week": 4, "date": "2026-10-01", "kickoffLocal": "20:15", "timezone": "America/New_York", "opponent": "Cleveland Browns", "homeAway": "away", "network": null, "streaming": "Prime Video", "isPrimetimeOrSpecial": "Thursday Night Football", "flexEligible": false, "notes": null },
+    { "seasonType": "regular", "week": 4, "date": "2026-10-01", "kickoffLocal": "20:15", "timezone": "America/New_York", "opponent": "Cleveland Browns", "homeAway": "away", "network": null, "streaming": "Prime Video", "isPrimetimeOrSpecial": "Thursday Night Football", "flexEligible": false, "notes": null, "result": "Steelers lost 24-27" },
     { "seasonType": "regular", "week": 5, "date": "2026-10-11", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Indianapolis Colts", "homeAway": "home", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": true, "notes": "First week eligible for flex scheduling." },
     { "seasonType": "regular", "week": 6, "date": "2026-10-18", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Tampa Bay Buccaneers", "homeAway": "away", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": true, "notes": null },
     { "seasonType": "regular", "week": 7, "date": "2026-10-25", "kickoffLocal": "09:30", "timezone": "America/New_York", "opponent": "New Orleans Saints", "homeAway": "home", "network": "NFL Network", "streaming": null, "isPrimetimeOrSpecial": "International Series, Paris, France (Stade de France; Steelers designated home team)", "flexEligible": false, "notes": null },

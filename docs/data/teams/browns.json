@@ -2,7 +2,7 @@
   "slug": "browns",
   "season": 2026,
   "team": "Cleveland Browns",
-  "lastUpdated": "2026-09-04",
+  "lastUpdated": "2026-10-02",
   "sourceNotes": "Compiled from nfl.com, ESPN.com, and Wikipedia (2026-09-04). Week 4 is a Thursday Night Football game. Week 18 date/time/network are not yet finalized.",
   "games": [
     { "seasonType": "preseason", "week": 1, "date": "2026-08-15", "kickoffLocal": null, "timezone": "America/New_York", "opponent": "Chicago Bears", "homeAway": "away", "network": null, "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "result": "Browns lost 10-34", "notes": null },
@@ -11,7 +11,7 @@
     { "seasonType": "regular", "week": 1, "date": "2026-09-13", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Jacksonville Jaguars", "homeAway": "away", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "notes": null, "result": "Browns lost 10-34" },
     { "seasonType": "regular", "week": 2, "date": "2026-09-20", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Tampa Bay Buccaneers", "homeAway": "away", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "notes": null, "result": "Browns won 23-19" },
     { "seasonType": "regular", "week": 3, "date": "2026-09-27", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Carolina Panthers", "homeAway": "home", "network": "FOX", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": false, "notes": null, "result": "Browns won 21-18" },
-    { "seasonType": "regular", "week": 4, "date": "2026-10-01", "kickoffLocal": "20:15", "timezone": "America/New_York", "opponent": "Pittsburgh Steelers", "homeAway": "home", "network": null, "streaming": "Prime Video", "isPrimetimeOrSpecial": "Thursday Night Football", "flexEligible": false, "notes": null },
+    { "seasonType": "regular", "week": 4, "date": "2026-10-01", "kickoffLocal": "20:15", "timezone": "America/New_York", "opponent": "Pittsburgh Steelers", "homeAway": "home", "network": null, "streaming": "Prime Video", "isPrimetimeOrSpecial": "Thursday Night Football", "flexEligible": false, "notes": null, "result": "Browns won 27-24" },
     { "seasonType": "regular", "week": 5, "date": "2026-10-11", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "New York Jets", "homeAway": "away", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": true, "notes": "First week eligible for flex scheduling." },
     { "seasonType": "regular", "week": 6, "date": "2026-10-18", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Baltimore Ravens", "homeAway": "home", "network": "FOX", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": true, "notes": null },
     { "seasonType": "regular", "week": 7, "date": "2026-10-25", "kickoffLocal": "13:00", "timezone": "America/New_York", "opponent": "Tennessee Titans", "homeAway": "away", "network": "CBS", "streaming": null, "isPrimetimeOrSpecial": null, "flexEligible": true, "notes": null },
