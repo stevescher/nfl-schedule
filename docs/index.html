@@ -347,7 +347,7 @@
 
     <footer>
       Schedules compiled from official NFL and team sources, checked weekly for updates.<br>
-      Not an official NFL product.
+      Not an official NFL product. <span id="last-updated"></span>
       <div class="footer-links">
         <a href="https://buymeacoffee.com/stevescher" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
         <span class="footer-sep">·</span>
@@ -362,6 +362,15 @@
 
 <script>
 document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+fetch('/data/standings.json', { cache: 'no-store' })
+  .then((res) => (res.ok ? res.json() : null))
+  .then((standings) => {
+    if (!standings || !standings.lastFetched) return;
+    const el = document.getElementById('last-updated');
+    if (el) el.textContent = 'Standings and results last updated ' + standings.lastFetched + '.';
+  })
+  .catch(() => {});
 
 function escapeHtml(str) {
   return String(str)
