@@ -76,14 +76,14 @@
       "streak": "W1"
     },
     "colts": {
-      "wins": 1,
+      "wins": 2,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC South",
-      "streak": "W1"
+      "streak": "W2"
     },
-    "titans": {
+    "texans": {
       "wins": 0,
       "losses": 3,
       "ties": 0,
@@ -91,7 +91,7 @@
       "division": "AFC South",
       "streak": "L3"
     },
-    "texans": {
+    "titans": {
       "wins": 0,
       "losses": 3,
       "ties": 0,
@@ -131,21 +131,21 @@
       "division": "AFC West",
       "streak": "L3"
     },
-    "eagles": {
+    "giants": {
       "wins": 2,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC East",
-      "streak": "L1"
+      "streak": "W1"
     },
-    "giants": {
+    "eagles": {
       "wins": 2,
       "losses": 1,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC East",
-      "streak": "W1"
+      "streak": "L1"
     },
     "cowboys": {
       "wins": 1,
@@ -157,11 +157,11 @@
     },
     "commanders": {
       "wins": 1,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC East",
-      "streak": "W1"
+      "streak": "L1"
     },
     "vikings": {
       "wins": 3,
@@ -203,21 +203,21 @@
       "division": "NFC South",
       "streak": "L1"
     },
-    "saints": {
+    "falcons": {
       "wins": 1,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC South",
-      "streak": "L1"
+      "streak": "W1"
     },
-    "falcons": {
+    "saints": {
       "wins": 1,
       "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC South",
-      "streak": "W1"
+      "streak": "L1"
     },
     "buccaneers": {
       "wins": 0,
