@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-10-04",
+  "lastFetched": "2026-10-05",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -100,36 +100,36 @@
       "streak": "L4"
     },
     "chiefs": {
-      "wins": 3,
+      "wins": 4,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC West",
-      "streak": "W3"
+      "streak": "W4"
     },
     "raiders": {
       "wins": 3,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC West",
-      "streak": "W3"
+      "streak": "L1"
     },
     "broncos": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC West",
-      "streak": "W2"
+      "streak": "L1"
     },
     "chargers": {
       "wins": 0,
-      "losses": 3,
+      "losses": 4,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC West",
-      "streak": "L3"
+      "streak": "L4"
     },
     "giants": {
       "wins": 3,
@@ -228,20 +228,20 @@
       "streak": "L4"
     },
     "49ers": {
-      "wins": 3,
+      "wins": 4,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC West",
-      "streak": "W3"
+      "streak": "W4"
     },
     "seahawks": {
-      "wins": 2,
+      "wins": 3,
       "losses": 1,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC West",
-      "streak": "L1"
+      "streak": "W1"
     },
     "rams": {
       "wins": 2,
