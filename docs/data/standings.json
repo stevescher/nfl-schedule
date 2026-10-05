@@ -181,11 +181,11 @@
     },
     "lions": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "W1"
+      "streak": "L1"
     },
     "packers": {
       "wins": 2,
@@ -196,12 +196,12 @@
       "streak": "W1"
     },
     "panthers": {
-      "wins": 1,
+      "wins": 2,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC South",
-      "streak": "L1"
+      "streak": "W1"
     },
     "falcons": {
       "wins": 1,
