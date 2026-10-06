@@ -83,7 +83,7 @@
       "division": "AFC South",
       "streak": "W2"
     },
-    "titans": {
+    "texans": {
       "wins": 0,
       "losses": 4,
       "ties": 0,
@@ -91,7 +91,7 @@
       "division": "AFC South",
       "streak": "L4"
     },
-    "texans": {
+    "titans": {
       "wins": 0,
       "losses": 4,
       "ties": 0,
@@ -204,20 +204,20 @@
       "streak": "W1"
     },
     "falcons": {
-      "wins": 1,
+      "wins": 2,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC South",
-      "streak": "W1"
+      "streak": "W2"
     },
     "saints": {
       "wins": 1,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC South",
-      "streak": "L1"
+      "streak": "L2"
     },
     "buccaneers": {
       "wins": 0,
