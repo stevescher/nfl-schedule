@@ -83,7 +83,7 @@
       "division": "AFC South",
       "streak": "W2"
     },
-    "texans": {
+    "titans": {
       "wins": 0,
       "losses": 4,
       "ties": 0,
@@ -91,7 +91,7 @@
       "division": "AFC South",
       "streak": "L4"
     },
-    "titans": {
+    "texans": {
       "wins": 0,
       "losses": 4,
       "ties": 0,
@@ -149,11 +149,11 @@
     },
     "cowboys": {
       "wins": 2,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC East",
-      "streak": "W1"
+      "streak": "L1"
     },
     "commanders": {
       "wins": 1,
@@ -220,12 +220,12 @@
       "streak": "L2"
     },
     "buccaneers": {
-      "wins": 0,
+      "wins": 1,
       "losses": 4,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC South",
-      "streak": "L4"
+      "streak": "W1"
     },
     "49ers": {
       "wins": 4,
