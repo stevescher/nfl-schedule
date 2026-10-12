@@ -1,4 +1,4 @@
-name: Update standings
+name: Update standings and schedule
 
 on:
   schedule:
@@ -28,6 +28,16 @@ jobs:
       - name: Fetch latest standings
         run: node fetch-standings.mjs
 
+      - name: Update scores and flex changes from ESPN
+        # Adds final scores and corrects flex-eligible time/network changes
+        # in data/teams/*.json, then republishes the calendars only if a team
+        # file actually changed (generate-ics bumps DTSTAMP on every feed).
+        run: |
+          node update-schedule.mjs
+          if ! git diff --quiet -- data/teams; then
+            node generate-ics.mjs
+          fi
+
       - name: Publish standings.json
         # Just the one file, not the full generate-ics.mjs: the .ics feeds
         # and published team JSON don't depend on standings, so running the
@@ -44,5 +54,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Auto-update standings $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "Auto-update standings/schedule $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
