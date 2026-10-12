@@ -36,12 +36,12 @@
       "streak": "L5"
     },
     "ravens": {
-      "wins": 3,
+      "wins": 4,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC North",
-      "streak": "W2"
+      "streak": "W3"
     },
     "browns": {
       "wins": 3,
@@ -205,11 +205,11 @@
     },
     "falcons": {
       "wins": 2,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC South",
-      "streak": "W2"
+      "streak": "L1"
     },
     "buccaneers": {
       "wins": 1,
