@@ -68,38 +68,63 @@ exists; each team page fetches it and shows a record badge (e.g. "7-3,
 missing (never fetched, or the fetch failed), the badge simply doesn't
 render, no broken page.
 
-Run `node fetch-standings.mjs` periodically (weekly during the season is
-plenty, since it's the same cadence the schedule-check routine would use)
-and then `node generate-ics.mjs` to publish the update.
+Standings are refreshed automatically (see "Automation" below); you don't
+need to run `fetch-standings.mjs` by hand.
 
-## Weekly update routine
+## Automation
 
-A single cloud routine ("NFL Schedule Weekly Check") runs every Tuesday
-9am ET against this repo. Like the single-team bills-schedule routine
-before it, it has read-only repo access and cannot push, so its job is to
-research and report; a human applies the findings.
+Everything below runs unattended in one GitHub Actions workflow,
+`.github/workflows/update-standings.yml`, every 15 minutes all year
+(`*/15 * * * *`). It can also be started manually from the Actions tab
+(`workflow_dispatch`).
 
-Each run does two things:
+Each run:
 
-1. **Standings refresh** (mechanical): runs `fetch-standings.mjs` and
-   reports what changed vs. the currently committed `data/standings.json`.
-2. **Targeted schedule research** (light judgment, not a full re-check):
-   flex-eligible games in the next 14 days, games played but missing a
-   `result`, and Week 17/18 TBD fields once the season is late enough for
-   them to be resolved. Deliberately does not re-verify all ~600 games
-   across 32 teams every week, since that's both expensive and a repeat of
-   the sub-delegation problems seen when the initial 29-team data set was
-   built via parallel research agents.
+1. `node fetch-standings.mjs` updates `data/standings.json` (records,
+   division rank, streak) from ESPN.
+2. `node update-schedule.mjs` reads ESPN's scoreboard for weeks 1-18
+   (`cdn.espn.com/core/nfl/scoreboard?xhr=1&week=N&seasontype=2&year=2026`)
+   and edits `data/teams/<slug>.json` in place (one line per game is
+   preserved):
+   - **Scores:** adds `result` (e.g. `"Bears lost 7-31"`, own score first)
+     to finished games that don't have one. An existing `result` is never
+     overwritten; a disagreement is only logged as a `MISMATCH` warning.
+   - **Flex changes:** for `flexEligible` games in the next 14 days,
+     corrects `date`, `kickoffLocal` and `network` when ESPN differs. Only
+     networks it can map unambiguously (FOX, CBS, NBC, ESPN/ABC, Prime
+     Video, Netflix, NFL Network) are applied. It does not touch
+     `isPrimetimeOrSpecial`.
+3. If any team file changed, `node generate-ics.mjs` regenerates the `.ics`
+   feeds and the published data under `docs/`. It is skipped otherwise,
+   since it bumps DTSTAMP on every feed.
+4. If anything changed, the workflow commits and pushes to `main`, and
+   GitHub Pages redeploys nfl.stevescher.com (usually 1-2 minutes). If
+   nothing changed there is no commit.
 
-After a run, apply its reported standings/schedule changes to the data
-files, then `node fetch-standings.mjs && node generate-ics.mjs` and push.
+So a score is typically live within about 15 minutes of ESPN marking the
+game final, plus the Pages deploy. Calendar apps re-fetch subscribed `.ics`
+feeds on their own schedule (often hours), which we don't control.
 
-## Why no GitHub Actions
+A failed run emails the repo owner via GitHub's normal Actions notifications.
 
-Same reasoning as bills-schedule: NFL schedule changes need judgment
-(reading team/league sources, reconciling notes), not a diff of an API
-response. A weekly Claude Code scheduled task does the research and a
-human applies confirmed changes; there is no separate build pipeline.
+### Not automated
+
+- **Postseason.** `postseason` in each team file is a placeholder and
+  `update-schedule.mjs` only reads `seasontype=2` (regular season). Playoff
+  games must be added by hand (or the script extended) once the bracket is set.
+- **Week 17/18 `null` placeholders** (date/time/network not yet announced)
+  are only filled by hand; the script updates games that already have a
+  date, within the 14-day flex window.
+- **Source:** ESPN only. If ESPN is wrong, the calendars will be wrong too.
+- **Schedule structure** (new opponents, home/away, bye weeks) is never
+  changed automatically; edit the data file and run `node generate-ics.mjs`.
+
+### History
+
+This used to be a weekly Claude Code scheduled task that researched and
+reported changes for a human to apply, then a daily Claude task that
+pushed directly. Both were replaced by the workflow above and the scheduled
+task has been disabled.
 
 ## Duration convention
 
