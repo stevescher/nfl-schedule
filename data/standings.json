@@ -4,12 +4,12 @@
   "sourceLabel": "ESPN",
   "teams": {
     "bills": {
-      "wins": 3,
+      "wins": 4,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC East",
-      "streak": "L1"
+      "streak": "W1"
     },
     "patriots": {
       "wins": 3,
@@ -179,21 +179,21 @@
       "division": "NFC North",
       "streak": "W2"
     },
-    "bears": {
+    "lions": {
       "wins": 3,
       "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "L1"
+      "streak": "W1"
     },
-    "lions": {
+    "bears": {
       "wins": 3,
       "losses": 2,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC North",
-      "streak": "W1"
+      "streak": "L1"
     },
     "panthers": {
       "wins": 2,
@@ -245,11 +245,11 @@
     },
     "rams": {
       "wins": 2,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC West",
-      "streak": "W1"
+      "streak": "L1"
     },
     "cardinals": {
       "wins": 1,
