@@ -69,11 +69,11 @@
     },
     "jaguars": {
       "wins": 4,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC South",
-      "streak": "W3"
+      "streak": "L1"
     },
     "colts": {
       "wins": 2,
@@ -84,12 +84,12 @@
       "streak": "L1"
     },
     "texans": {
-      "wins": 1,
+      "wins": 2,
       "losses": 4,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC South",
-      "streak": "W1"
+      "streak": "W2"
     },
     "titans": {
       "wins": 0,
