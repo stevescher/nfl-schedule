@@ -139,21 +139,21 @@
       "division": "NFC East",
       "streak": "L1"
     },
-    "cowboys": {
+    "eagles": {
       "wins": 2,
-      "losses": 3,
+      "losses": 4,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC East",
-      "streak": "L1"
+      "streak": "L4"
     },
-    "eagles": {
+    "cowboys": {
       "wins": 2,
       "losses": 4,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC East",
-      "streak": "L4"
+      "streak": "L2"
     },
     "commanders": {
       "wins": 1,
@@ -171,21 +171,21 @@
       "division": "NFC North",
       "streak": "W5"
     },
-    "bears": {
+    "packers": {
       "wins": 4,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC North",
-      "streak": "W1"
+      "streak": "W3"
     },
-    "packers": {
-      "wins": 3,
+    "bears": {
+      "wins": 4,
       "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "W2"
+      "streak": "W1"
     },
     "lions": {
       "wins": 3,
