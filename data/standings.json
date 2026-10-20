@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-10-19",
+  "lastFetched": "2026-10-20",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -157,11 +157,11 @@
     },
     "commanders": {
       "wins": 1,
-      "losses": 3,
+      "losses": 4,
       "ties": 1,
       "divisionRank": 4,
       "division": "NFC East",
-      "streak": "-"
+      "streak": "L1"
     },
     "vikings": {
       "wins": 5,
@@ -228,12 +228,12 @@
       "streak": "L1"
     },
     "49ers": {
-      "wins": 5,
+      "wins": 6,
       "losses": 0,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC West",
-      "streak": "W5"
+      "streak": "W6"
     },
     "seahawks": {
       "wins": 3,
