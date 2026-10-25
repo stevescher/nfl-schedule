@@ -35,21 +35,21 @@
       "division": "AFC East",
       "streak": "L5"
     },
-    "browns": {
-      "wins": 4,
+    "steelers": {
+      "wins": 5,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC North",
-      "streak": "W1"
+      "streak": "W3"
     },
-    "steelers": {
+    "browns": {
       "wins": 4,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC North",
-      "streak": "W2"
+      "streak": "W1"
     },
     "ravens": {
       "wins": 4,
@@ -213,11 +213,11 @@
     },
     "saints": {
       "wins": 2,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC South",
-      "streak": "W1"
+      "streak": "L1"
     },
     "buccaneers": {
       "wins": 1,
