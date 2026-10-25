@@ -108,20 +108,20 @@
       "streak": "W5"
     },
     "broncos": {
-      "wins": 4,
+      "wins": 5,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC West",
-      "streak": "W2"
+      "streak": "W3"
     },
     "raiders": {
       "wins": 3,
-      "losses": 3,
+      "losses": 4,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC West",
-      "streak": "L3"
+      "streak": "L4"
     },
     "chargers": {
       "wins": 0,
@@ -179,21 +179,21 @@
       "division": "NFC North",
       "streak": "W2"
     },
-    "packers": {
+    "lions": {
       "wins": 4,
       "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "W3"
+      "streak": "W2"
     },
-    "lions": {
-      "wins": 3,
-      "losses": 2,
+    "packers": {
+      "wins": 4,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC North",
-      "streak": "W1"
+      "streak": "L1"
     },
     "panthers": {
       "wins": 3,
@@ -243,21 +243,21 @@
       "division": "NFC West",
       "streak": "L2"
     },
-    "cardinals": {
-      "wins": 2,
+    "rams": {
+      "wins": 3,
       "losses": 4,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC West",
       "streak": "W1"
     },
-    "rams": {
+    "cardinals": {
       "wins": 2,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC West",
-      "streak": "L2"
+      "streak": "L1"
     }
   }
 }
