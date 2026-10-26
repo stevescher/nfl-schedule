@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-10-25",
+  "lastFetched": "2026-10-26",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -101,11 +101,11 @@
     },
     "chiefs": {
       "wins": 5,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC West",
-      "streak": "W5"
+      "streak": "L1"
     },
     "broncos": {
       "wins": 5,
@@ -236,12 +236,12 @@
       "streak": "L1"
     },
     "seahawks": {
-      "wins": 3,
+      "wins": 4,
       "losses": 3,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC West",
-      "streak": "L2"
+      "streak": "W1"
     },
     "rams": {
       "wins": 3,
