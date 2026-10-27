@@ -139,21 +139,21 @@
       "division": "NFC East",
       "streak": "W1"
     },
-    "eagles": {
-      "wins": 2,
+    "cowboys": {
+      "wins": 3,
       "losses": 4,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC East",
-      "streak": "L4"
+      "streak": "W1"
     },
-    "cowboys": {
+    "eagles": {
       "wins": 2,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC East",
-      "streak": "L2"
+      "streak": "L5"
     },
     "commanders": {
       "wins": 1,
