@@ -147,21 +147,21 @@
       "division": "NFC East",
       "streak": "L1"
     },
-    "eagles": {
-      "wins": 2,
-      "losses": 5,
-      "ties": 0,
-      "divisionRank": 3,
-      "division": "NFC East",
-      "streak": "L5"
-    },
     "commanders": {
-      "wins": 1,
+      "wins": 2,
       "losses": 4,
       "ties": 1,
+      "divisionRank": 3,
+      "division": "NFC East",
+      "streak": "W1"
+    },
+    "eagles": {
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
       "divisionRank": 4,
       "division": "NFC East",
-      "streak": "L1"
+      "streak": "L6"
     },
     "vikings": {
       "wins": 6,
