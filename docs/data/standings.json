@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-01",
+  "lastFetched": "2026-11-02",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -12,12 +12,12 @@
       "streak": "W3"
     },
     "patriots": {
-      "wins": 4,
+      "wins": 5,
       "losses": 3,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC East",
-      "streak": "L1"
+      "streak": "W1"
     },
     "jets": {
       "wins": 2,
@@ -29,11 +29,11 @@
     },
     "dolphins": {
       "wins": 1,
-      "losses": 5,
+      "losses": 6,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC East",
-      "streak": "W1"
+      "streak": "L1"
     },
     "steelers": {
       "wins": 6,
@@ -99,21 +99,21 @@
       "division": "AFC South",
       "streak": "L2"
     },
-    "chiefs": {
-      "wins": 5,
-      "losses": 1,
+    "broncos": {
+      "wins": 6,
+      "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC West",
-      "streak": "L1"
+      "streak": "W4"
     },
-    "broncos": {
+    "chiefs": {
       "wins": 5,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC West",
-      "streak": "W3"
+      "streak": "L2"
     },
     "raiders": {
       "wins": 4,
@@ -125,11 +125,11 @@
     },
     "chargers": {
       "wins": 0,
-      "losses": 6,
+      "losses": 7,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC West",
-      "streak": "L6"
+      "streak": "L7"
     },
     "giants": {
       "wins": 4,
@@ -244,12 +244,12 @@
       "streak": "W1"
     },
     "rams": {
-      "wins": 3,
+      "wins": 4,
       "losses": 4,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC West",
-      "streak": "W1"
+      "streak": "W2"
     },
     "cardinals": {
       "wins": 3,
