@@ -61,19 +61,19 @@
     },
     "ravens": {
       "wins": 4,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC North",
-      "streak": "L3"
+      "streak": "L4"
     },
     "jaguars": {
-      "wins": 5,
+      "wins": 6,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC South",
-      "streak": "W1"
+      "streak": "W2"
     },
     "texans": {
       "wins": 2,
