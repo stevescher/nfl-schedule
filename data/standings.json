@@ -44,12 +44,12 @@
       "streak": "W4"
     },
     "bengals": {
-      "wins": 5,
+      "wins": 6,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC North",
-      "streak": "W3"
+      "streak": "W4"
     },
     "browns": {
       "wins": 5,
@@ -213,11 +213,11 @@
     },
     "falcons": {
       "wins": 3,
-      "losses": 5,
+      "losses": 6,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC South",
-      "streak": "L1"
+      "streak": "L2"
     },
     "saints": {
       "wins": 2,
