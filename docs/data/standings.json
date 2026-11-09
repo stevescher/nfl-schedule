@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-08",
+  "lastFetched": "2026-11-09",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -13,11 +13,11 @@
     },
     "patriots": {
       "wins": 5,
-      "losses": 3,
+      "losses": 4,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC East",
-      "streak": "W1"
+      "streak": "L1"
     },
     "jets": {
       "wins": 2,
@@ -76,12 +76,12 @@
       "streak": "W2"
     },
     "texans": {
-      "wins": 2,
+      "wins": 3,
       "losses": 5,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC South",
-      "streak": "L1"
+      "streak": "W1"
     },
     "colts": {
       "wins": 2,
@@ -117,19 +117,19 @@
     },
     "raiders": {
       "wins": 4,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC West",
-      "streak": "W1"
+      "streak": "L1"
     },
     "chargers": {
       "wins": 0,
-      "losses": 7,
+      "losses": 8,
       "ties": 0,
       "divisionRank": 4,
       "division": "AFC West",
-      "streak": "L7"
+      "streak": "L8"
     },
     "giants": {
       "wins": 5,
@@ -188,12 +188,12 @@
       "streak": "W3"
     },
     "packers": {
-      "wins": 5,
+      "wins": 6,
       "losses": 3,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC North",
-      "streak": "W1"
+      "streak": "W2"
     },
     "buccaneers": {
       "wins": 3,
@@ -228,36 +228,36 @@
       "streak": "L2"
     },
     "49ers": {
-      "wins": 6,
+      "wins": 7,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC West",
-      "streak": "L1"
+      "streak": "W1"
     },
-    "rams": {
+    "seahawks": {
       "wins": 5,
       "losses": 4,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC West",
-      "streak": "W3"
+      "streak": "W1"
     },
-    "seahawks": {
-      "wins": 4,
+    "rams": {
+      "wins": 5,
       "losses": 4,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC West",
-      "streak": "L1"
+      "streak": "W3"
     },
     "cardinals": {
       "wins": 3,
-      "losses": 5,
+      "losses": 6,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC West",
-      "streak": "W1"
+      "streak": "L1"
     }
   }
 }
