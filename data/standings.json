@@ -171,21 +171,21 @@
       "division": "NFC North",
       "streak": "L1"
     },
-    "lions": {
-      "wins": 6,
+    "bears": {
+      "wins": 7,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC North",
       "streak": "W4"
     },
-    "bears": {
+    "lions": {
       "wins": 6,
       "losses": 2,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "W3"
+      "streak": "W4"
     },
     "packers": {
       "wins": 6,
@@ -195,19 +195,11 @@
       "division": "NFC North",
       "streak": "W2"
     },
-    "buccaneers": {
-      "wins": 3,
-      "losses": 5,
-      "ties": 0,
-      "divisionRank": 1,
-      "division": "NFC South",
-      "streak": "W2"
-    },
     "panthers": {
       "wins": 3,
       "losses": 5,
       "ties": 0,
-      "divisionRank": 2,
+      "divisionRank": 1,
       "division": "NFC South",
       "streak": "L3"
     },
@@ -215,9 +207,17 @@
       "wins": 3,
       "losses": 5,
       "ties": 0,
-      "divisionRank": 3,
+      "divisionRank": 2,
       "division": "NFC South",
       "streak": "W1"
+    },
+    "buccaneers": {
+      "wins": 3,
+      "losses": 6,
+      "ties": 0,
+      "divisionRank": 3,
+      "division": "NFC South",
+      "streak": "L1"
     },
     "falcons": {
       "wins": 3,
