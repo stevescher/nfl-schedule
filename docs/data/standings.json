@@ -4,12 +4,12 @@
   "sourceLabel": "ESPN",
   "teams": {
     "bills": {
-      "wins": 6,
+      "wins": 7,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC East",
-      "streak": "W3"
+      "streak": "W4"
     },
     "patriots": {
       "wins": 5,
@@ -163,19 +163,11 @@
       "division": "NFC East",
       "streak": "L7"
     },
-    "vikings": {
-      "wins": 6,
-      "losses": 1,
-      "ties": 0,
-      "divisionRank": 1,
-      "division": "NFC North",
-      "streak": "L1"
-    },
     "bears": {
       "wins": 7,
       "losses": 2,
       "ties": 0,
-      "divisionRank": 2,
+      "divisionRank": 1,
       "division": "NFC North",
       "streak": "W4"
     },
@@ -183,9 +175,17 @@
       "wins": 6,
       "losses": 2,
       "ties": 0,
-      "divisionRank": 3,
+      "divisionRank": 2,
       "division": "NFC North",
       "streak": "W4"
+    },
+    "vikings": {
+      "wins": 6,
+      "losses": 2,
+      "ties": 0,
+      "divisionRank": 3,
+      "division": "NFC North",
+      "streak": "L2"
     },
     "packers": {
       "wins": 6,
