@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-12",
+  "lastFetched": "2026-11-13",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -133,11 +133,11 @@
     },
     "giants": {
       "wins": 5,
-      "losses": 2,
+      "losses": 3,
       "ties": 1,
       "divisionRank": 1,
       "division": "NFC East",
-      "streak": "W2"
+      "streak": "L1"
     },
     "cowboys": {
       "wins": 4,
@@ -148,12 +148,12 @@
       "streak": "W1"
     },
     "commanders": {
-      "wins": 2,
+      "wins": 3,
       "losses": 5,
       "ties": 1,
       "divisionRank": 3,
       "division": "NFC East",
-      "streak": "L1"
+      "streak": "W1"
     },
     "eagles": {
       "wins": 2,
