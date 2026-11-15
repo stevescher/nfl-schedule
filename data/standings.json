@@ -13,11 +13,11 @@
     },
     "patriots": {
       "wins": 5,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC East",
-      "streak": "L1"
+      "streak": "L2"
     },
     "jets": {
       "wins": 2,
@@ -163,16 +163,16 @@
       "division": "NFC East",
       "streak": "L7"
     },
-    "bears": {
+    "lions": {
       "wins": 7,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC North",
-      "streak": "W4"
+      "streak": "W5"
     },
-    "lions": {
-      "wins": 6,
+    "bears": {
+      "wins": 7,
       "losses": 2,
       "ties": 0,
       "divisionRank": 2,
