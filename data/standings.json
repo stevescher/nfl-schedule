@@ -35,21 +35,21 @@
       "division": "AFC East",
       "streak": "L3"
     },
-    "steelers": {
-      "wins": 6,
+    "bengals": {
+      "wins": 7,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC North",
-      "streak": "W4"
+      "streak": "W5"
     },
-    "bengals": {
+    "steelers": {
       "wins": 6,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC North",
-      "streak": "W4"
+      "streak": "L1"
     },
     "browns": {
       "wins": 6,
