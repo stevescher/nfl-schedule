@@ -76,20 +76,20 @@
       "streak": "W3"
     },
     "texans": {
-      "wins": 3,
+      "wins": 4,
       "losses": 6,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC South",
-      "streak": "L1"
+      "streak": "W1"
     },
     "colts": {
       "wins": 3,
-      "losses": 7,
+      "losses": 8,
       "ties": 0,
       "divisionRank": 3,
       "division": "AFC South",
-      "streak": "W1"
+      "streak": "L1"
     },
     "titans": {
       "wins": 1,
