@@ -100,12 +100,12 @@
       "streak": "L3"
     },
     "chiefs": {
-      "wins": 7,
+      "wins": 8,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC West",
-      "streak": "W2"
+      "streak": "W3"
     },
     "broncos": {
       "wins": 7,
@@ -253,11 +253,11 @@
     },
     "cardinals": {
       "wins": 3,
-      "losses": 7,
+      "losses": 8,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC West",
-      "streak": "L2"
+      "streak": "L3"
     }
   }
 }
