@@ -181,11 +181,11 @@
     },
     "vikings": {
       "wins": 7,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 3,
       "division": "NFC North",
-      "streak": "W1"
+      "streak": "L1"
     },
     "packers": {
       "wins": 6,
@@ -228,12 +228,12 @@
       "streak": "L2"
     },
     "49ers": {
-      "wins": 8,
+      "wins": 9,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC West",
-      "streak": "W2"
+      "streak": "W3"
     },
     "seahawks": {
       "wins": 6,
