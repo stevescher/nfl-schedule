@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-23",
+  "lastFetched": "2026-11-24",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -37,11 +37,11 @@
     },
     "bengals": {
       "wins": 7,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC North",
-      "streak": "W5"
+      "streak": "L1"
     },
     "browns": {
       "wins": 6,
@@ -148,12 +148,12 @@
       "streak": "W1"
     },
     "commanders": {
-      "wins": 3,
+      "wins": 4,
       "losses": 5,
       "ties": 1,
       "divisionRank": 3,
       "division": "NFC East",
-      "streak": "W1"
+      "streak": "W2"
     },
     "eagles": {
       "wins": 3,
