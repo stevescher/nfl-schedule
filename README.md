@@ -1,7 +1,6 @@
 # NFL Schedule Calendars
 
-A multi-team version of [bills-schedule](https://github.com/stevescher/bills-schedule):
-subscribable calendars for all 32 NFL teams, one shared landing page with
+Subscribable calendars for all 32 NFL teams, one shared landing page with
 search, published at [nfl.stevescher.com](https://nfl.stevescher.com).
 
 Started as a 3-team prototype (Bills, Giants, Jets) to validate the
@@ -15,9 +14,8 @@ existing one) gets added.
   abbreviation, search aliases, brand colors, and stadium for every
   supported team. The homepage search and per-team page branding both read
   from this file.
-- `data/teams/<slug>.json` holds one team's full schedule, same schema as
-  the original bills-schedule project (`seasonType`, games array, `result`
-  for completed games, `postseason` placeholder).
+- `data/teams/<slug>.json` holds one team's full schedule (`seasonType`,
+  games array, `result` for completed games, `postseason` placeholder).
 - `generate-ics.mjs` loops over every file in `data/teams/`, and for each
   team writes:
   - `docs/<slug>.ics`, that team's subscribable calendar feed
