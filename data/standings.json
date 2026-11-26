@@ -163,21 +163,21 @@
       "division": "NFC East",
       "streak": "W1"
     },
-    "lions": {
-      "wins": 8,
+    "bears": {
+      "wins": 9,
       "losses": 2,
       "ties": 0,
       "divisionRank": 1,
       "division": "NFC North",
       "streak": "W6"
     },
-    "bears": {
+    "lions": {
       "wins": 8,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 2,
       "division": "NFC North",
-      "streak": "W5"
+      "streak": "L1"
     },
     "vikings": {
       "wins": 7,
