@@ -4,12 +4,12 @@
   "sourceLabel": "ESPN",
   "teams": {
     "bills": {
-      "wins": 9,
+      "wins": 10,
       "losses": 1,
       "ties": 0,
       "divisionRank": 1,
       "division": "AFC East",
-      "streak": "W6"
+      "streak": "W7"
     },
     "patriots": {
       "wins": 5,
@@ -109,11 +109,11 @@
     },
     "chiefs": {
       "wins": 8,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "divisionRank": 2,
       "division": "AFC West",
-      "streak": "W3"
+      "streak": "L1"
     },
     "raiders": {
       "wins": 4,
