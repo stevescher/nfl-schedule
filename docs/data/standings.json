@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-26",
+  "lastFetched": "2026-11-27",
   "source": "ESPN standings API",
   "sourceLabel": "ESPN",
   "teams": {
@@ -139,29 +139,29 @@
       "division": "NFC East",
       "streak": "W1"
     },
-    "cowboys": {
-      "wins": 5,
-      "losses": 6,
-      "ties": 0,
-      "divisionRank": 2,
-      "division": "NFC East",
-      "streak": "W1"
-    },
     "commanders": {
       "wins": 4,
       "losses": 5,
       "ties": 1,
-      "divisionRank": 3,
+      "divisionRank": 2,
       "division": "NFC East",
       "streak": "W2"
     },
+    "cowboys": {
+      "wins": 5,
+      "losses": 7,
+      "ties": 0,
+      "divisionRank": 3,
+      "division": "NFC East",
+      "streak": "L1"
+    },
     "eagles": {
-      "wins": 3,
+      "wins": 4,
       "losses": 7,
       "ties": 0,
       "divisionRank": 4,
       "division": "NFC East",
-      "streak": "W1"
+      "streak": "W2"
     },
     "bears": {
       "wins": 9,
